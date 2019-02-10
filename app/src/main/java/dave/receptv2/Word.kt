@@ -6,6 +6,11 @@ import android.arch.persistence.room.PrimaryKey
 
 
 @Entity(tableName = "word_table")
-data class Word(@PrimaryKey @ColumnInfo(name = "word") val word: String, val recept: String)
+data class Word(@PrimaryKey @ColumnInfo(name = "title") val title: String,
+                val recept: String,
+                val category: String,
+                val ingredienser: String,
+                val picture: String,
+                val info: String
+                )
 
-data class Forrat(@PrimaryKey @ColumnInfo(name = "forrat") val word: String, val recept: String)

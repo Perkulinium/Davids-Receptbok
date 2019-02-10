@@ -40,27 +40,66 @@ class GenreRecept_Activity : AppCompatActivity() {
 
 
 
+        wordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
 
 
 
 
 if (foodCategoryTextView.text == "Kött")
 {
-    wordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
-    wordViewModel.allWords.observe(this, Observer { words ->
+    wordViewModel.getCategory(category = "Meat").observe(this, Observer { words ->
         // Update the cached copy of the words in the adapter.
         words?.let { adapter.setWords(it) }
+
     })
 
 
 }
 
 
+        if (foodCategoryTextView.text == "Förrätt")
+        {
+            wordViewModel.getCategory(category = "Forrat").observe(this, Observer { words ->
+                // Update the cached copy of the words in the adapter.
+                words?.let { adapter.setWords(it) }
+            })
 
 
 
+        }
+
+        if (foodCategoryTextView.text == "Fisk") {
+
+            wordViewModel.getCategory(category = "Fish").observe(this, Observer { words ->
+                // Update the cached copy of the words in the adapter.
+                words?.let { adapter.setWords(it) }
+            })
+        }
+
+        if (foodCategoryTextView.text == "Vegetariskt") {
+            wordViewModel.getCategory(category = "Vegetariskt").observe(this, Observer { words ->
+                // Update the cached copy of the words in the adapter.
+                words?.let { adapter.setWords(it) }
+            })
+        }
+
+        if (foodCategoryTextView.text == "Veganskt") {
+            wordViewModel.getCategory(category = "Veganskt").observe(this, Observer { words ->
+                // Update the cached copy of the words in the adapter.
+                words?.let { adapter.setWords(it) }
+            })
+        }
+
+        if (foodCategoryTextView.text == "Dessert") {
+            wordViewModel.getCategory(category = "Dessert").observe(this, Observer { words ->
+                // Update the cached copy of the words in the adapter.
+                words?.let { adapter.setWords(it) }
+            })
+        }
+
+        }
 
     }
 
 
-}
+

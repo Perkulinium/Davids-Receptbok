@@ -12,15 +12,23 @@ interface WordDao {
     // Always holds/caches latest version of data. Notifies its active observers when the
     // data has changed. Since we are getting all the contents of the database,
     // we are notified whenever any of the database contents have changed.
-    @Query("SELECT * from word_table ORDER BY word ASC")
+    @Query("SELECT * from word_table ORDER BY title ASC")
     fun getAlphabetizedWords(): LiveData<List<Word>>
 
-    // We do not need a conflict strategy, because the word is our primary key, and you cannot
+
+    // We do not need a conflict strategy, because the title is our primary key, and you cannot
     // add two items with the same primary key to the database. If the table has more than one
     // column, you can use @Insert(onConflict = OnConflictStrategy.REPLACE) to update a row.
     @Insert
     fun insert(word: Word)
 
+
     @Query("DELETE FROM word_table")
     fun deleteAll()
+
+    @Query("SELECT * FROM word_table where category LIKE  :category")
+    fun findByCategory(category: String) : LiveData<List<Word>>
+
+
+
 }

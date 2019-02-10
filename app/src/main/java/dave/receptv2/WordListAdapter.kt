@@ -29,6 +29,12 @@ init {
         detailIntent.putExtra("titel", "${wordItemView.text}")
         //detailIntent.putExtra("recept", adapter.words.get(adapterPosition).recept)
         detailIntent.putExtra("recept", words.get(adapterPosition).recept)
+        detailIntent.putExtra("info", words.get(adapterPosition).info)
+        detailIntent.putExtra("picture", words.get(adapterPosition).picture)
+        detailIntent.putExtra("ingredienser", words.get(adapterPosition).ingredienser)
+
+
+
 
 
         itemView.context.startActivity(detailIntent)
@@ -45,7 +51,7 @@ init {
 
     override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
         val current = words[position]
-        holder.wordItemView.text = current.word
+        holder.wordItemView.text = current.title
 
 
 
@@ -59,6 +65,9 @@ init {
         notifyDataSetChanged()
 
     }
+
+
+
 
 
     override fun getItemCount() = words.size

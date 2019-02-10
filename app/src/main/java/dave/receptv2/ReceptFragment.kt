@@ -55,34 +55,35 @@ class ReceptFragment : Fragment() {
         forrattKnapp.setOnClickListener {
             val intent1 = Intent(context, GenreRecept_Activity::class.java)
 
-
+            intent1.putExtra("textNamn", "Förrätt")
             startActivity(intent1)
         }
 
         vegetarisktKnapp.setOnClickListener {
             val intent1 = Intent(context, GenreRecept_Activity::class.java)
-
+            intent1.putExtra("textNamn", "Vegetariskt")
             startActivity(intent1)
         }
 
 
         fishKnapp.setOnClickListener {
-            val intent1 = Intent(context, GenreRecept_Activity::class.java)
 
+            val intent1 = Intent(context, GenreRecept_Activity::class.java)
+            intent1.putExtra("textNamn", "Fisk")
             startActivity(intent1)
         }
 
 
         veganKnapp.setOnClickListener {
             val intent1 = Intent(context, GenreRecept_Activity::class.java)
-
+            intent1.putExtra("textNamn", "Veganskt")
 
             startActivity(intent1)
         }
 
         dessertKnapp.setOnClickListener {
             val intent1 = Intent(context, GenreRecept_Activity::class.java)
-
+            intent1.putExtra("textNamn", "Dessert")
 
             startActivity(intent1)
         }

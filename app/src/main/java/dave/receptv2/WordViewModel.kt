@@ -22,12 +22,20 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
     // - Repository is completely separated from the UI through the ViewModel.
     val allWords: LiveData<List<Word>>
 
+   // val meatList: LiveData<List<Word>>
+
+   // val forratList : LiveData<List<Word>>
+
 
     init {
 
         val wordsDao = WordRoomDatabase.getDatabase(application, scope).wordDao()
         repository = WordRepository(wordsDao)
         allWords = repository.allWords
+
+
+
+
     }
 
     /**
@@ -41,4 +49,46 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
         super.onCleared()
         parentJob.cancel()
     }
+
+    fun getCategory(category: String) : LiveData<List<Word>>
+    {
+
+        if (category == "Meat")
+        {
+
+            val meatList = repository.meatCategoryTest
+            return meatList
+        }
+
+        if (category == "Forrat")
+        {
+            val forratList = repository.forratCategoryTest
+            return forratList
+
+        }
+        if (category == "Fish")
+        {
+            val fishList = repository.fishCategoryTest
+            return fishList
+        }
+        if (category == "Vegetariskt")
+        {
+            val vegeList = repository.vegeCategoryTest
+            return vegeList
+        }
+        if (category == "Veganskt")
+        {
+            val veganList = repository.vegansktCategoryTest
+            return veganList
+        }
+        if (category == "Dessert")
+        {
+            val dessertList = repository.dessertCategoryTest
+            return dessertList
+        }
+
+        return allWords
+    }
+
+
 }
