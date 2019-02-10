@@ -56,7 +56,7 @@ if (foodCategoryTextView.text == "Kött")
 }
 
 
-    
+
 
 
 
