@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent" android:id="@+id/relativeLayout3"
+>
+    <ImageButton
+            android:src="@color/colorAccent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/fishKnapp"
+            app:layout_constraintTop_toBottomOf="@+id/meatKnapp"
+            app:layout_constraintBottom_toTopOf="@+id/dessertKnapp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/vegetarisktKnapp"/>
+    <ImageButton
+            android:src="@color/colorAccent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/dessertKnapp"
+            app:layout_constraintStart_toEndOf="@+id/vegetarisktKnapp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fishKnapp"/>
+    <ImageButton
+            android:src="@color/colorAccent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/veganKnapp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vegetarisktKnapp"
+            app:layout_constraintVertical_bias="0.596" app:layout_constraintEnd_toStartOf="@+id/dessertKnapp"
+            app:layout_constraintStart_toStartOf="parent"
+    />
+    <ImageButton
+            android:src="@color/colorAccent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/meatKnapp"
+            app:layout_constraintTop_toBottomOf="@+id/veckansKnapp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@+id/forrattKnapp"
+            app:layout_constraintBottom_toTopOf="@+id/fishKnapp" android:contentDescription="TODO"/>
+    <ImageButton
+            android:src="@color/colorAccent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/forrattKnapp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/veckansKnapp"
+            app:layout_constraintEnd_toStartOf="@+id/meatKnapp"
+            app:layout_constraintBottom_toTopOf="@+id/vegetarisktKnapp"/>
+    <ImageButton
+            android:src="@color/colorAccent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/vegetarisktKnapp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/fishKnapp"
+            app:layout_constraintTop_toBottomOf="@+id/forrattKnapp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintBottom_toTopOf="@+id/veganKnapp"/>
+    <ImageButton
+            android:src="@color/colorAccent"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:id="@+id/veckansKnapp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+</android.support.constraint.ConstraintLayout>

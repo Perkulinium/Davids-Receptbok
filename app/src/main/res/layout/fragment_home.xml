@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent" android:id="@+id/relativeLayout"
+>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp" tools:src="@color/colorPrimary"
+                    android:id="@+id/headerKnapp"/>
+            <TextView
+                    android:text="Utvalda Recept"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/UtvaldaRecept" android:textSize="24sp"/>
+            <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+                              android:orientation="horizontal">
+                    <ImageButton
+                            android:src="@color/colorAccent"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
+                            tools:layout_editor_absoluteX="133dp" android:id="@+id/food1"/>
+                    <ImageButton
+                            android:src="@color/colorAccent"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
+                            tools:layout_editor_absoluteX="133dp" android:id="@+id/food2"
+                            android:layout_weight="1"/>
+                    <ImageButton
+                            android:src="@color/colorAccent"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
+                            tools:layout_editor_absoluteX="133dp" android:id="@+id/food3"
+                            android:layout_weight="1"/>
+                    <ImageButton
+                            android:src="@color/colorAccent"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
+                            tools:layout_editor_absoluteX="133dp" android:id="@+id/food4"
+                            android:layout_weight="1"/>
+                    <ImageButton
+                            android:src="@color/colorAccent"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
+                            tools:layout_editor_absoluteX="133dp" android:id="@+id/food6"
+                            android:layout_weight="1"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+            <TextView
+                    android:text="Våra Favoriter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="355dp"
+                    tools:layout_editor_absoluteX="63dp" android:id="@+id/ourFavorites" android:textSize="24sp"/>
+            <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+                              android:orientation="horizontal">
+                    <ImageButton
+                            android:src="@color/colorAccent"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
+                            tools:layout_editor_absoluteX="133dp" android:id="@+id/ourFood1"/>
+                    <ImageButton
+                            android:src="@color/colorAccent"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
+                            tools:layout_editor_absoluteX="133dp" android:id="@+id/ourFood2"
+                            android:layout_weight="1"/>
+                    <ImageButton
+                            android:src="@color/colorAccent"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
+                            tools:layout_editor_absoluteX="133dp" android:id="@+id/ourFood3"
+                            android:layout_weight="1"/>
+                    <ImageButton
+                            android:src="@color/colorAccent"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
+                            tools:layout_editor_absoluteX="133dp" android:id="@+id/ourFood4"
+                            android:layout_weight="1"/>
+                    <ImageButton
+                            android:src="@color/colorAccent"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
+                            tools:layout_editor_absoluteX="133dp" android:id="@+id/ourFood5"
+                            android:layout_weight="1"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+            <TextView
+                    android:text="Dagens Recept"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/todayChoosen" android:textSize="24sp"/>
+            <ImageButton
+                    android:src="@color/colorAccent"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" tools:layout_editor_absoluteY="663dp"
+                    tools:layout_editor_absoluteX="98dp" android:id="@+id/todaysRecept"/>
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
