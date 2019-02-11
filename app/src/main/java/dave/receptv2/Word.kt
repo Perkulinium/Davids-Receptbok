@@ -11,6 +11,7 @@ data class Word(@PrimaryKey @ColumnInfo(name = "title") val title: String,
                 val category: String,
                 val ingredienser: String,
                 val picture: String,
-                val info: String
+                val info: String,
+                val ID : Int
                 )
 

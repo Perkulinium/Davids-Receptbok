@@ -29,6 +29,9 @@ interface WordDao {
     @Query("SELECT * FROM word_table where category LIKE  :category")
     fun findByCategory(category: String) : LiveData<List<Word>>
 
+    @Query("SELECT * FROM word_table where ID LIKE :ID")
+    fun findByID(ID: Int) : LiveData<List<Word>>
+
 
 
 }

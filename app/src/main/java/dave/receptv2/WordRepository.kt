@@ -14,6 +14,7 @@ class WordRepository(private val wordDao: WordDao) {
     val vegeCategoryTest: LiveData<List<Word>> = wordDao.findByCategory("Vegetariskt")
     val vegansktCategoryTest: LiveData<List<Word>> = wordDao.findByCategory("Veganskt")
     val dessertCategoryTest: LiveData<List<Word>> = wordDao.findByCategory("Dessert")
+    val numberCategory11: LiveData<List<Word>> = wordDao.findByID(11)
 
 
 

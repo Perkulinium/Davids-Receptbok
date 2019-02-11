@@ -91,4 +91,15 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
+    fun getID(ID : Int) : LiveData<List<Word>>
+    {
+        if (ID == 11)
+        {
+            val number11 = repository.numberCategory11
+            return number11
+        }
+
+        return allWords
+    }
+
 }

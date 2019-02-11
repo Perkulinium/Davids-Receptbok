@@ -97,7 +97,10 @@ if (foodCategoryTextView.text == "Kött")
             })
         }
 
+
         }
+
+
 
     }
 

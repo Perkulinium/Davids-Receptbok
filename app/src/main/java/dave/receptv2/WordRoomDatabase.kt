@@ -11,7 +11,7 @@ import kotlinx.coroutines.experimental.Dispatchers
 import kotlinx.coroutines.experimental.IO
 import kotlinx.coroutines.experimental.launch
 
-@Database(entities = [Word::class], version = 6)
+@Database(entities = [Word::class], version = 7)
 abstract class WordRoomDatabase : RoomDatabase() {
 
     abstract fun wordDao(): WordDao
@@ -73,39 +73,39 @@ abstract class WordRoomDatabase : RoomDatabase() {
 
             wordDao.deleteAll()
 //Kött
-            var word = Word("Test", "Hej", "Meat", "", "https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","")
+            var word = Word("Test", "Hej", "Meat", "", "https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","", 21)
 
             wordDao.insert(word)
-            word = Word("World!", "Hej", "Meat", "","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","")
+            word = Word("World!", "Hej", "Meat", "","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","", 22)
             wordDao.insert(word)
-            word = Word("1!", "2", "Meat","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","")
+            word = Word("1!", "2", "Meat","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","", 23)
             wordDao.insert(word)
 
        //Förrätt
-            word = Word("vege!", "2", "Forrat","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","")
+            word = Word("vege!", "2", "Forrat","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","", 11)
             wordDao.insert(word)
 
-            word = Word("FUCK FÖRRÄTT", "FEMTIO", "Forrat","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","")
+            word = Word("FUCK FÖRRÄTT", "FEMTIO", "Forrat","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","", 12)
             wordDao.insert(word)
 
             //Fisk
-            word = Word("Fisk1", "FISHBLA TEST", "Fish","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","")
+            word = Word("Fisk1", "FISHBLA TEST", "Fish","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","", 31)
             wordDao.insert(word)
 
-            word = Word("Fisk2", "FEMTIO", "Fish","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","")
+            word = Word("Fisk2", "FEMTIO", "Fish","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","", 32)
             wordDao.insert(word)
 
             //Vegetariskt
-            word = Word("Vegetariskt", "test vege bla\nbla", "Vegetariskt","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","")
+            word = Word("Vegetariskt", "test vege bla\nbla", "Vegetariskt","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","", 41)
             wordDao.insert(word)
 
             //Veganskt
-            word = Word("Veganskt", "test vege bla\nbla", "Veganskt","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","")
+            word = Word("Veganskt", "test vege bla\nbla", "Veganskt","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","",51)
             wordDao.insert(word)
 
             //Dessert
-            word = Word("Dessert", "test vege bla\nbla", "Dessert","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","")
-            wordDao.insert(word)
+           var test = Word("Dessert", "test vege bla\nbla", "Dessert","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","", 61)
+            wordDao.insert(test)
         }
     }
 

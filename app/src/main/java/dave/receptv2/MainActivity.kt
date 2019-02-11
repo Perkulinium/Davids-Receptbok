@@ -7,6 +7,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+
+
     var homeFrag : HomeFragment? = null
     var receptFrag : ReceptFragment? = null
     var favoritFrag : FavoritFragment? = null
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
                 if(homeFrag == null)
                 {
                     homeFrag = HomeFragment()
+
 
                 }
                 supportFragmentManager.beginTransaction().replace(R.id.main_fragment_holder, homeFrag!!).commit()
@@ -55,6 +58,8 @@ class MainActivity : AppCompatActivity() {
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         homeFrag = HomeFragment()
+
         supportFragmentManager.beginTransaction().replace(R.id.main_fragment_holder, homeFrag!!).commit()
+
           }
 }
