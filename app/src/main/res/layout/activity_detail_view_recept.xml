@@ -18,16 +18,25 @@
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             />
             <TextView
-                    android:text="TextView"
+                    android:text="Title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" tools:layout_editor_absoluteY="411dp"
-                    tools:layout_editor_absoluteX="81dp" android:id="@+id/textView" android:editable="false"
+                    tools:layout_editor_absoluteX="81dp" android:id="@+id/titleText" android:editable="false"
+                    android:textSize="24sp" android:textAlignment="center"/>
+            <TextView
+                    android:text="Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/info" android:textAlignment="center"
                     android:textSize="18sp"/>
             <TextView
-                    android:text="TextView"
+                    android:text="Ingredienser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/ingrediText" android:textSize="18sp"/>
+            <TextView
+                    android:text="Recept"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" tools:layout_editor_absoluteY="411dp"
-                    tools:layout_editor_absoluteX="81dp" android:id="@+id/textView2" android:editable="false"
+                    tools:layout_editor_absoluteX="81dp" android:id="@+id/receptText" android:editable="false"
                     android:textSize="18sp"/>
         </LinearLayout>
     </ScrollView>

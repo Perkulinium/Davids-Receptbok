@@ -99,6 +99,52 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
             return number11
         }
 
+        if (ID == 12)
+        {
+            val number12 = repository.numberCategory12
+            return number12
+        }
+        if (ID == 21)
+    {
+        val number21 = repository.numberCategory21
+        return number21
+    }
+        if (ID == 22)
+        {
+            val number22 = repository.numberCategory22
+            return number22
+        }
+        if (ID == 23)
+        {
+            val number23 = repository.numberCategory23
+            return number23
+        }
+        if (ID == 31)
+        {
+            val number31 = repository.numberCategory31
+            return number31
+        }
+        if (ID == 32)
+        {
+            val number32 = repository.numberCategory32
+            return number32
+        }
+        if (ID == 41)
+        {
+            val number41 = repository.numberCategory41
+            return number41
+        }
+        if (ID == 51)
+        {
+            val number51 = repository.numberCategory51
+            return number51
+        }
+        if (ID == 61)
+        {
+            val number61 = repository.numberCategory61
+            return number61
+        }
+
         return allWords
     }
 

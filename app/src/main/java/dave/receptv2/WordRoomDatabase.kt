@@ -73,7 +73,7 @@ abstract class WordRoomDatabase : RoomDatabase() {
 
             wordDao.deleteAll()
 //Kött
-            var word = Word("Test", "Hej", "Meat", "", "https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","", 21)
+            var word = Word("Test", "Hej", "Meat", "Ingredienser", "https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","", 21)
 
             wordDao.insert(word)
             word = Word("World!", "Hej", "Meat", "","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","", 22)
@@ -82,7 +82,7 @@ abstract class WordRoomDatabase : RoomDatabase() {
             wordDao.insert(word)
 
        //Förrätt
-            word = Word("vege!", "2", "Forrat","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","", 11)
+            word = Word("vege!", "2", "Forrat","Lök\nBacon\nSaft","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5sld6AcJjX6VvfNorWI99UgQyV_JlQy8jE8lOWn1XsFbhuciN1A","30 minuter", 11)
             wordDao.insert(word)
 
             word = Word("FUCK FÖRRÄTT", "FEMTIO", "Forrat","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","", 12)
@@ -96,7 +96,7 @@ abstract class WordRoomDatabase : RoomDatabase() {
             wordDao.insert(word)
 
             //Vegetariskt
-            word = Word("Vegetariskt", "test vege bla\nbla", "Vegetariskt","","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","", 41)
+            word = Word("Vegetariskt", "test vege bla\nbla", "Vegetariskt","Test","https://foodwatch.com.au/images/stories/p-fats/iStock-POPCORN839992974.jpg","30 minuter", 41)
             wordDao.insert(word)
 
             //Veganskt

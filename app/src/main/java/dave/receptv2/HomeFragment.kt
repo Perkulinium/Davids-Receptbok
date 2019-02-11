@@ -97,33 +97,40 @@ class HomeFragment : Fragment() {
 
 
         food1.setOnClickListener{
-           wordViewModel.getID(11)
+        //  wordViewModel.getID(11)
+        val intent1 = Intent(context, detailViewRecept::class.java)
+        wordViewModel.getID(ID = 11).observe(this, Observer { words ->
+            words?.let {adapter.setWords(it)}
 
+            this.words = words!!
 
+            intent1.putExtra("titel", words.single().title)
+            intent1.putExtra("recept", words.single().recept)
+            intent1.putExtra("info", words.single().info)
+            intent1.putExtra("ingredienser", words.single().ingredienser)
+            intent1.putExtra("picture", words.single().picture)
+            startActivity(intent1)
+        })
+    }
+        food2.setOnClickListener{
+            //  wordViewModel.getID(11)
             val intent1 = Intent(context, detailViewRecept::class.java)
-
-
-            wordViewModel.getID(ID = 11).observe(this, Observer { words ->
+            wordViewModel.getID(ID = 41).observe(this, Observer { words ->
                 words?.let {adapter.setWords(it)}
 
                 this.words = words!!
 
-                   // intent1.putExtra("recept", words.single().title)
-                    intent1.putExtra("titel", words.single().title)
+                intent1.putExtra("titel", words.single().title)
                 intent1.putExtra("recept", words.single().recept)
-
-                // intent1.putExtra("titel", words.get(0).title)
-                   // intent1.putExtra("recept", words.get(1).recept)
-
-                //intent1.putExtra("recept", words!![3].recept)
-
-                        startActivity(intent1)
-
+                intent1.putExtra("info", words.single().info)
+                intent1.putExtra("ingredienser", words.single().ingredienser)
+                intent1.putExtra("picture", words.single().picture)
+                startActivity(intent1)
             })
-
-
-
         }
+
+
+
     }
 
     /**

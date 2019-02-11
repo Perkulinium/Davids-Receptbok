@@ -23,15 +23,19 @@ class detailViewRecept : AppCompatActivity() {
 
      //   val recept = intent.getStringArrayListExtra("Meat0")
 
-        textView.setText(intentDetail)
-        textView2.setText(receptDetail)
+        titleText.setText(intentDetail)
+        receptText.setText(receptDetail)
+        info.setText(infoDetail)
+        ingrediText.setText(ingredienserDetail)
+       // imageView2.setImageBitmap(pictureDetail.to)
+
         Picasso.get()
-            .load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5sld6AcJjX6VvfNorWI99UgQyV_JlQy8jE8lOWn1XsFbhuciN1A")
-            .placeholder(R.drawable.abc_ic_arrow_drop_right_black_24dp)
-            .error(R.drawable.abc_ic_arrow_drop_right_black_24dp)
+            .load(pictureDetail)
+         //   .placeholder(R.drawable.abc_ic_arrow_drop_right_black_24dp)
+         //   .error(R.drawable.abc_ic_arrow_drop_right_black_24dp)
             .into(imageView2);
 
-        Log.i("Pia8", "${textView.setText(intentDetail)}")
+        Log.i("Pia8", "${titleText.setText(intentDetail)}")
 
 
         // intent.getStringExtra("meat0", detailText.text)
