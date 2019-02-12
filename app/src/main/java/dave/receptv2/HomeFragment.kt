@@ -1,19 +1,17 @@
 package dave.receptv2
 
-import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.list_item.*
+import java.util.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -95,7 +93,6 @@ class HomeFragment : Fragment() {
 
 
 
-
         food1.setOnClickListener{
         //  wordViewModel.getID(11)
         val intent1 = Intent(context, detailViewRecept::class.java)
@@ -130,6 +127,45 @@ class HomeFragment : Fragment() {
         }
 
 
+
+            food3.setOnClickListener {
+               // words.random().ID
+
+
+                val intent1 = Intent(context, detailViewRecept::class.java)
+
+               wordViewModel.getRandom(id).observe(this, Observer { words ->
+                   words?.let { adapter.setWords(it)}
+
+                  // words?.random()?.ID
+
+
+                    this.words = words!!
+
+
+                intent1.putExtra("ID", words?.random()?.ID)
+
+                intent1.putExtra("titel", words?.single()?.title)
+                intent1.putExtra("recept", words?.single()?.recept)
+                intent1.putExtra("info", words?.single()?.info)
+                intent1.putExtra("ingredienser", words?.single()?.ingredienser)
+                intent1.putExtra("picture", words?.single()?.picture)
+
+
+
+                   //    intent1.putExtra("titel", words?.random().title)
+               //    intent1.putExtra("recept", words?.random().recept)
+               //    intent1.putExtra("info", words?.random().info)
+               //    intent1.putExtra("ingredienser", words?.random().ingredienser)
+               //    intent1.putExtra("picture", words?.random().picture)
+
+
+                   startActivity(intent1)
+                })
+
+              //  Log.i("Pia8", "$randomTest")
+
+            }
 
     }
 

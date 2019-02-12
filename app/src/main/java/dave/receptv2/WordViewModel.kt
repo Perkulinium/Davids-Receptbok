@@ -148,4 +148,15 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
         return allWords
     }
 
+    fun getRandom(Random : Int) : LiveData<List<Word>>
+    {
+        if(Random == Random)
+        {
+            val randomTest = repository.randomID
+            return randomTest
+        }
+        return allWords
+
+    }
+
 }

@@ -13,6 +13,10 @@ class detailViewRecept : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_view_recept)
 
+        var intentID = intent.getStringExtra("ID")
+
+        intentID
+
         var intentDetail = intent.getStringExtra("titel")
         var receptDetail = intent.getStringExtra("recept")
         var ingredienserDetail = intent.getStringExtra("ingredienser")
