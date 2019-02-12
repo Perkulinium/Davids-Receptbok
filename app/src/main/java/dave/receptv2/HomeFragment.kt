@@ -126,46 +126,50 @@ class HomeFragment : Fragment() {
             })
         }
 
-
-
-            food3.setOnClickListener {
-               // words.random().ID
-
-
-                val intent1 = Intent(context, detailViewRecept::class.java)
-
-               wordViewModel.getRandom(id).observe(this, Observer { words ->
-                   words?.let { adapter.setWords(it)}
-
-                  // words?.random()?.ID
-
-
-                    this.words = words!!
-
-
-                intent1.putExtra("ID", words?.random()?.ID)
-
-                intent1.putExtra("titel", words?.single()?.title)
-                intent1.putExtra("recept", words?.single()?.recept)
-                intent1.putExtra("info", words?.single()?.info)
-                intent1.putExtra("ingredienser", words?.single()?.ingredienser)
-                intent1.putExtra("picture", words?.single()?.picture)
+        var foodTest =  wordViewModel.getRandom(id).observe(this, Observer { words ->
+            words?.let { adapter.setWords(it)}
+            this.words = words!!
 
 
 
-                   //    intent1.putExtra("titel", words?.random().title)
-               //    intent1.putExtra("recept", words?.random().recept)
-               //    intent1.putExtra("info", words?.random().info)
-               //    intent1.putExtra("ingredienser", words?.random().ingredienser)
-               //    intent1.putExtra("picture", words?.random().picture)
+            Picasso.get().load(words.single().picture).into(food3)
 
 
-                   startActivity(intent1)
-                })
+        })
 
-              //  Log.i("Pia8", "$randomTest")
+
+               food3.setOnClickListener {
+
+
+
+
+
+
+                   val intent1 = Intent(context, detailViewRecept::class.java)
+                   wordViewModel.getRandom(id).observe(this, Observer { words ->
+                       words?.let { adapter.setWords(it)}
+                       this.words = words!!
+
+
+                       intent1.putExtra("ID", words?.random()?.ID)
+
+                   intent1.putExtra("titel", words?.single()?.title)
+                   intent1.putExtra("recept", words?.single()?.recept)
+                   intent1.putExtra("info", words?.single()?.info)
+                   intent1.putExtra("ingredienser", words?.single()?.ingredienser)
+                   intent1.putExtra("picture", words?.single()?.picture)
+
+                      // Picasso.get().load(words.single().picture).into(food3)
+                       startActivity(intent1)
+
+
+                   })
+
 
             }
+
+
+
 
     }
 
