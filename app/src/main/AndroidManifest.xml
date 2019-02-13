@@ -12,8 +12,18 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".detailViewRecept">
+            <intent-filter>
+                <action android:name="package.detailViewRecept" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity android:name=".GenreRecept_Activity">
+            <intent-filter>
+                <action android:name="package.GenreRecept_Activity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity
                 android:name=".MainActivity"

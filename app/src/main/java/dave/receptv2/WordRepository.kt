@@ -40,6 +40,11 @@ class WordRepository(private val wordDao: WordDao) {
     //Random
    // val randomID: LiveData<List<Word>> = wordDao.findbyRandom()
     val randomID: LiveData<List<Word>> = wordDao.findbyRandom()
+    val randomID2: LiveData<List<Word>> = wordDao.findbyRandom()
+    val randomID3: LiveData<List<Word>> = wordDao.findbyRandom()
+    val randomID4: LiveData<List<Word>> = wordDao.findbyRandom()
+    val randomID5: LiveData<List<Word>> = wordDao.findbyRandom()
+
 
 
 
