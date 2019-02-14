@@ -14,8 +14,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_home.*
-import java.time.LocalDateTime
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -49,7 +49,7 @@ class HomeFragment : Fragment() {
 
 
     lateinit var wordViewModel: WordViewModel
-    lateinit var adapter : WordListAdapter
+  //  lateinit var adapter : WordListAdapter
     var words1 = emptyList<Word>() // Cached copy of words
     var words2 = emptyList<Word>() // Cached copy of words
     var words3 = emptyList<Word>() // Cached copy of words
@@ -107,30 +107,40 @@ class HomeFragment : Fragment() {
         wordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
 
 
-        var RandomRecept1 =  wordViewModel.getRandom().observe(this, Observer { words ->
+        wordViewModel.getRandom().observe(this, Observer { words ->
             words?.let { adapter.setWords(it)}
             this.words1 = words!!
-            Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food1)
+
+
+              Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food1)
+
+
         })
-        var RandomRecept2 =  wordViewModel.getRandom1().observe(this, Observer { words ->
+          wordViewModel.getRandom1().observe(this, Observer { words ->
             words?.let { adapter.setWords(it)}
             this.words2 = words!!
-            Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food2)
+
+               Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food2)
         })
-        var RandomRecept3 =  wordViewModel.getRandom2().observe(this, Observer { words ->
+        wordViewModel.getRandom2().observe(this, Observer { words ->
             words?.let { adapter.setWords(it)}
             this.words3 = words!!
-            Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food3)
+
+              Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food3)
+
         })
-        var RandomRecept4 =  wordViewModel.getRandom3().observe(this, Observer { words ->
+          wordViewModel.getRandom3().observe(this, Observer { words ->
             words?.let { adapter.setWords(it)}
             this.words4 = words!!
-            Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food4)
+
+               Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food4)
         })
-        var RandomRecept5 =  wordViewModel.getRandom4().observe(this, Observer { words ->
+         wordViewModel.getRandom4().observe(this, Observer { words ->
             words?.let { adapter.setWords(it)}
             this.words5 = words!!
-            Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food6)
+               Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food6)
+
+
         })
 
 
@@ -141,7 +151,8 @@ class HomeFragment : Fragment() {
             intent1.putExtra("recept", words1?.single()?.recept)
             intent1.putExtra("info", words1?.single()?.info)
             intent1.putExtra("ingredienser", words1?.single()?.ingredienser)
-            intent1.putExtra("picture", words1?.single()?.picture)
+           // intent1.putExtra("picture", words1?.single()?.picture)
+            intent1.putExtra("picture", words1.single()?.picture)
             startActivity(intent1)
 
         }
@@ -225,7 +236,9 @@ class HomeFragment : Fragment() {
 
     }
 
+
 @RequiresApi(Build.VERSION_CODES.O)
+
 fun week()
 {
     //val current = LocalDateTime.now()
@@ -238,7 +251,7 @@ fun week()
         {
 
             ourFood1.setOnClickListener {
-                Log.i("Pia8", "Söndag")
+                Log.i("Pia89", "Söndag")
             }
 
         }
@@ -246,19 +259,19 @@ fun week()
     {
 
         ourFood1.setOnClickListener {
-            Log.i("Pia8", "Måndag")
+            Log.i("Pia89", "Måndag")
         }
     }
     if (day == 3)
     {
         ourFood1.setOnClickListener {
-            Log.i("Pia8", "Tisdag")
+            Log.i("Pia89", "Tisdag")
         }
 
     }
     if (day == 4) {
         ourFood1.setOnClickListener {
-            Log.i("Pia8", "Onsdag")
+            Log.i("Pia89", "Onsdag")
         }
 
 
@@ -266,17 +279,17 @@ fun week()
     if (day == 5)
     {
         ourFood1.setOnClickListener {
-            Log.i("Pia8", "Torsdag")
+            Log.i("Pia89", "Torsdag")
         }    }
     if (day == 6)
     {
         ourFood1.setOnClickListener {
-            Log.i("Pia8", "Fredag")
+            Log.i("Pia89", "Fredag")
         }    }
     if (day == 7)
     {
         ourFood1.setOnClickListener {
-            Log.i("Pia8", "Lördag")
+            Log.i("Pia89", "Lördag")
         }    }
 
 

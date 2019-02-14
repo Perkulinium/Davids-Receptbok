@@ -10,7 +10,7 @@ data class Word(@PrimaryKey @ColumnInfo(name = "title") val title: String,
                 val recept: String,
                 val category: String,
                 val ingredienser: String,
-                val picture: String?,
+                val picture: Int,
                 val info: String,
                 val ID : Int
                 )

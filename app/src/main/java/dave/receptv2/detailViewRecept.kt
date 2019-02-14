@@ -1,27 +1,35 @@
 package dave.receptv2
 
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail_view_recept.*
 
 class detailViewRecept : AppCompatActivity() {
-    lateinit var adapter : WordListAdapter
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_view_recept)
+        lateinit var wordViewModel: WordViewModel
 
-        var intentID = intent.getStringExtra("ID")
 
-        intentID
+        wordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
+
+
+        //   var intentID = intent.getStringExtra("ID")
+
+//       Log.i("Pia8", intentID)
 
         var intentDetail = intent.getStringExtra("titel")
         var receptDetail = intent.getStringExtra("recept")
         var ingredienserDetail = intent.getStringExtra("ingredienser")
         var infoDetail = intent.getStringExtra("info")
-        var pictureDetail = intent.getStringExtra("picture")
+       // var pictureDetail = intent.getStringExtra("picture")
+        var pictureDetail = intent.getIntExtra("picture", -1)
 
         var testPic = ""
 
@@ -33,15 +41,10 @@ class detailViewRecept : AppCompatActivity() {
         ingrediText.setText(ingredienserDetail)
        // imageView2.setImageBitmap(pictureDetail.to)
 
-        Picasso.get()
-            .load(pictureDetail)
-         //   .placeholder(R.drawable.abc_ic_arrow_drop_right_black_24dp)
-         //   .error(R.drawable.abc_ic_arrow_drop_right_black_24dp)
-            .into(imageView2);
-
-        Log.i("Pia8", "${titleText.setText(intentDetail)}")
 
 
-        // intent.getStringExtra("meat0", detailText.text)
+            Picasso.get().load(pictureDetail).resize(350, 350).into(imageView2)
+
+
     }
 }

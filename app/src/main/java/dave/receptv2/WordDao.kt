@@ -35,8 +35,8 @@ interface WordDao {
     //@Query("SELECT * FROM word_table ORDER BY Random() LIMIT 1")
    // fun findbyRandom(LIMIT : Int) : LiveData<List<Word>>
 
-    @Query ("SELECT * FROM word_table WHERE ID IN (SELECT ID FROM word_table ORDER BY RANDOM() LIMIT 1)")
+    @Query ("SELECT * FROM word_table ORDER BY RANDOM() LIMIT 1")
     fun findbyRandom() : LiveData<List<Word>>
-
+//    @Query ("SELECT * FROM word_table WHERE ID IN (SELECT ID FROM word_table ORDER BY RANDOM() LIMIT 1)")
 
 }
