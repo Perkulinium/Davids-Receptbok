@@ -54,27 +54,21 @@ class favoAdapter internal constructor(context: Context) : RecyclerView.Adapter<
 
         init {
             view.setOnClickListener {
-                // Log.i("pia8app", "KLICKAT PÅ RADEN " + adapterPosition.toString())
+                 Log.i("pia8app", "KLICKAT PÅ RADEN " + adapterPosition.toString())
          //       Log.i("pia8app", "RADERA ID  ${theadapter.words.get(adapterPosition).fbKey}")
               //  theadapter.clickReceptListener(adapterPosition)
 
 
-             /*
-                var detailIntent = Intent(itemView.context, detailViewRecept::class.java)
-                detailIntent.putExtra("titel", "${wordItemView.text}")
-                //detailIntent.putExtra("recept", adapter.words.get(adapterPosition).recept)
 
-                detailIntent.putExtra("recept", words.get(adapterPosition).recept)
-                detailIntent.putExtra("info", words.get(adapterPosition).info)
-                detailIntent.putExtra("picture", words.get(adapterPosition).picture)
-                detailIntent.putExtra("ingredienser", words.get(adapterPosition).ingredienser)
-*/
+
+
                 var detailIntent = Intent(itemView.context, detailViewRecept::class.java)
                 detailIntent.putExtra("titel", theadapter.words.get(adapterPosition).title)
                 detailIntent.putExtra("recept", theadapter.words.get(adapterPosition).recept)
                 detailIntent.putExtra("info", theadapter.words.get(adapterPosition).info)
                 detailIntent.putExtra("picture", theadapter.words.get(adapterPosition).picture)
                 detailIntent.putExtra("ingredienser", theadapter.words.get(adapterPosition).ingredienser)
+                detailIntent.putExtra("ID", theadapter.words.get(adapterPosition).ID)
 
 
 

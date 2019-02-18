@@ -12,6 +12,7 @@ data class Word(@PrimaryKey @ColumnInfo(name = "title") val title: String,
                 val ingredienser: String,
                 val picture: Int,
                 val info: String,
-                val ID : Int
+                val ID : Int,
+                var favoriter : Boolean? = null
                 )
 

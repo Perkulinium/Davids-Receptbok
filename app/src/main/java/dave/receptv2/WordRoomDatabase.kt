@@ -10,7 +10,7 @@ import kotlinx.coroutines.experimental.Dispatchers
 import kotlinx.coroutines.experimental.IO
 import kotlinx.coroutines.experimental.launch
 
-@Database(entities = [Word::class], version = 10)
+@Database(entities = [Word::class], version = 11)
 abstract class WordRoomDatabase : RoomDatabase() {
 
     abstract fun wordDao(): WordDao
@@ -80,7 +80,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                 "Ingredienser",
                 R.drawable.bildett,
                 "30 minuter",
-                21)
+                21,
+                true)
             wordDao.insert(word)
 
             word = Word(
@@ -90,7 +91,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                 "7",
                 R.drawable.bildtva,
                 "30 minuter",
-                22)
+                22,
+                false)
             wordDao.insert(word)
 
             word = Word(
@@ -100,7 +102,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                 "6",
                 R.drawable.bildtre,
                 "30 minuter",
-                23)
+                23,
+                false)
             wordDao.insert(word)
 
        //Förrätt
@@ -111,7 +114,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                 "Lök\nBacon\nSaft",
                 R.drawable.bildfyra,
                 "30 minuter",
-                11)
+                11,
+                false)
             wordDao.insert(word)
 
             word = Word(
@@ -121,7 +125,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                 "5",
                 R.drawable.bildfem,
                 "30 minuter",
-                12)
+                12,
+                false)
             wordDao.insert(word)
 
             //Fisk
@@ -132,7 +137,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                 "4",
                 R.drawable.bildett,
                 "30 minuter",
-                31)
+                31,
+                false)
             wordDao.insert(word)
 
             word = Word(
@@ -142,7 +148,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                 "3",
                 R.drawable.bildtva,
                 "30 minuter",
-                32)
+                32,
+                false)
             wordDao.insert(word)
 
             //Vegetariskt
@@ -153,7 +160,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                 "Test",
                 R.drawable.bildtre,
                 "30 minuter",
-                41)
+                41,
+                false)
             wordDao.insert(word)
 
             //Veganskt
@@ -164,7 +172,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                 "2",
                 R.drawable.bildfyra,
                 "30 minuter",
-                51)
+                51,
+                false)
             wordDao.insert(word)
 
             //Dessert
@@ -175,7 +184,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                "1",
                R.drawable.bildfem,
                "30 minuter",
-               61)
+               61,
+               false)
             wordDao.insert(word)
 
 

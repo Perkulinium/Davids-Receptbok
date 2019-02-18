@@ -32,6 +32,7 @@ init {
         detailIntent.putExtra("info", words.get(adapterPosition).info)
         detailIntent.putExtra("picture", words.get(adapterPosition).picture)
         detailIntent.putExtra("ingredienser", words.get(adapterPosition).ingredienser)
+        detailIntent.putExtra("ID", words.get(adapterPosition).ID)
 
 
 

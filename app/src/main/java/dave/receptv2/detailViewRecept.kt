@@ -1,27 +1,37 @@
 package dave.receptv2
 
+import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail_view_recept.*
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class detailViewRecept : AppCompatActivity() {
 
-
 var click = true
+   // lateinit var words : List<Word>
+
+
+   // lateinit var words : Word
+    lateinit var wordViewModel: WordViewModel
+    var words = emptyList<Word>() // Cached copy of words
+//    val adapter = WordListAdapter(this)
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_view_recept)
-        lateinit var wordViewModel: WordViewModel
 
 
         wordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
 
 
-        //   var intentID = intent.getStringExtra("ID")
+
 
 //       Log.i("Pia8", intentID)
 
@@ -31,6 +41,10 @@ var click = true
         var infoDetail = intent.getStringExtra("info")
        // var pictureDetail = intent.getStringExtra("picture")
         var pictureDetail = intent.getIntExtra("picture", -1)
+        var intentID = intent.getIntExtra("ID", -1)
+
+        //  Log.i("Pia50", "ID: ${intentID}")
+
 
         var testPic = ""
 
@@ -44,23 +58,70 @@ var click = true
 
 
 
+
+
             Picasso.get().load(pictureDetail).resize(350, 350).into(imageView2)
-save()
+
+        val adapter = WordListAdapter(this)
+
+        wordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
+
+
+
+        Log.i("Pia8", "$intentID")
+      //  Log.i("Pia8", "${words?.single()?.ID}")
+
+        var iD = intentID
+        favButton.setOnClickListener {
+            if (click)
+            {
+
+
+                Log.i("Pia8", "True")
+               // var iD2 = words.single().ID
+               // Log.i("Pia8", "${words.single().title}")
+
+                wordViewModel.getID(iD).observe(this, Observer { words ->
+                    words?.let { adapter.setWords(it)}
+                    this.words = words!!
+
+                    Log.i("Pia8", "titel: ${words.single().title} " )
+
+                 //   words.single().favoriter = words.single().favoriter != true
+
+                  
+
+
+                    Log.i("Pia8", "Favoriter: ${words.single().favoriter}")
+
+                })
+
+
+                click = false
+
+
+            } else {
+            //    Log.i("Pia8", "False")
+         //       words.single().favoriter = false
+            //    Log.i("Pia8", "Favoriter: ${words.single().favoriter}")
+                click = true
+            }
+
+
+        }
+
+//save()
+
 
     }
 
     fun save()
     {
-        favButton.setOnClickListener {
-            if (click)
-            {
-                Log.i("Pia8", "True")
-                click = false
-            } else {
-                Log.i("Pia8", "False")
-                click = true
-            }
-        }
+
+
+
+
+
     }
 
 }

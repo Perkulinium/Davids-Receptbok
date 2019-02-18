@@ -148,6 +148,21 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
         return allWords
     }
 
+    fun getFavorit(favoriter : Boolean) : LiveData<List<Word>>
+    {
+        if (favoriter == true)
+        {
+            var favoriteID = repository.favoriteID
+            return favoriteID
+        }
+        if (favoriter == false)
+        {
+            var changeFavorit = repository.favoriteID
+            return changeFavorit
+        }
+        return allWords
+    }
+
     fun getRandom() : LiveData<List<Word>>
     {
 

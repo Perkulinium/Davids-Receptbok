@@ -45,6 +45,8 @@ class WordRepository(private val wordDao: WordDao) {
     val randomID4: LiveData<List<Word>> = wordDao.findbyRandom()
     val randomID5: LiveData<List<Word>> = wordDao.findbyRandom()
 
+    //Favoriter
+    var favoriteID: LiveData<List<Word>> = wordDao.findByFavorit(true)
 
 
 

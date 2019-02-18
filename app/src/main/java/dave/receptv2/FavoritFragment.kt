@@ -73,7 +73,7 @@ class FavoritFragment : Fragment() {
 
         if (favTextView.text == "Förrätt")
         {
-            wordViewModel.getCategory(category = "Forrat").observe(this, Observer { words ->
+            wordViewModel.getFavorit(true).observe(this, Observer { words ->
                 // Update the cached copy of the words in the adapter.
                 words?.let { adapter.setWords(it) }
 
