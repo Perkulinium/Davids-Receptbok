@@ -17,5 +17,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="8dp"
-            tools:listitem="5"/>
+            tools:listitem="5" android:id="@+id/favRec"/>
 </android.support.constraint.ConstraintLayout>

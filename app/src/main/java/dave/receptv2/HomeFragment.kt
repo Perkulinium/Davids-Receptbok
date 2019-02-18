@@ -113,7 +113,7 @@ class HomeFragment : Fragment() {
 
 
               Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food1)
-
+            Log.i("Pia11", "$words")
 
         })
           wordViewModel.getRandom1().observe(this, Observer { words ->
@@ -121,12 +121,14 @@ class HomeFragment : Fragment() {
             this.words2 = words!!
 
                Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food2)
+              Log.i("Pia21", "$words")
         })
         wordViewModel.getRandom2().observe(this, Observer { words ->
             words?.let { adapter.setWords(it)}
             this.words3 = words!!
 
               Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food3)
+            Log.i("Pia31", "$words")
 
         })
           wordViewModel.getRandom3().observe(this, Observer { words ->
@@ -134,11 +136,13 @@ class HomeFragment : Fragment() {
             this.words4 = words!!
 
                Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food4)
+              Log.i("Pia41", "$words")
         })
          wordViewModel.getRandom4().observe(this, Observer { words ->
             words?.let { adapter.setWords(it)}
             this.words5 = words!!
                Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food6)
+             Log.i("Pia51", "$words")
 
 
         })

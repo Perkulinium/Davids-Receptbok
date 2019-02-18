@@ -3,13 +3,14 @@ package dave.receptv2
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail_view_recept.*
 
 class detailViewRecept : AppCompatActivity() {
 
 
-
+var click = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +45,22 @@ class detailViewRecept : AppCompatActivity() {
 
 
             Picasso.get().load(pictureDetail).resize(350, 350).into(imageView2)
-
+save()
 
     }
+
+    fun save()
+    {
+        favButton.setOnClickListener {
+            if (click)
+            {
+                Log.i("Pia8", "True")
+                click = false
+            } else {
+                Log.i("Pia8", "False")
+                click = true
+            }
+        }
+    }
+
 }
