@@ -12,9 +12,9 @@ import kotlinx.android.synthetic.main.list_item.view.*
 import kotlin.math.sign
 
 
-class favoAdapter internal constructor(var words : List<Word>, val clickReceptListener: (Int) -> (Unit)) : RecyclerView.Adapter<favoAdapter.WordViewHolder>()  {
+class favoAdapter internal constructor(context: Context) : RecyclerView.Adapter<favoAdapter.WordViewHolder>()  {
 
-    private var words1 = emptyList<Word>() // Cached copy of words
+    private var words = emptyList<Word>() // Cached copy of words
 
     //var words : List<Word>
 
@@ -56,7 +56,7 @@ class favoAdapter internal constructor(var words : List<Word>, val clickReceptLi
             view.setOnClickListener {
                 // Log.i("pia8app", "KLICKAT PÅ RADEN " + adapterPosition.toString())
          //       Log.i("pia8app", "RADERA ID  ${theadapter.words.get(adapterPosition).fbKey}")
-                theadapter.clickReceptListener(adapterPosition)
+              //  theadapter.clickReceptListener(adapterPosition)
 
 
              /*

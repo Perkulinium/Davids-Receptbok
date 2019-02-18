@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_favorit.*
 class FavoritFragment : Fragment() {
 
     private lateinit var wordViewModel: WordViewModel
-    lateinit var adapter : favoAdapter
+    lateinit var adapter1 : favoAdapter
 
     var food = mutableListOf<Word>()
 
@@ -50,24 +50,39 @@ class FavoritFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
+
+
+
+
+
+        val adapter = favoAdapter(context!!)
+        favRec.adapter = adapter
+        favRec.layoutManager = LinearLayoutManager(context)
+
         wordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
-        favRec.layoutManager = LinearLayoutManager(this.context)
-        adapter = favoAdapter(food){rownumberClicked ->
+
+
+      //  val recyclerView = findViewById<RecyclerView>(R.id.receptListRec)
+      //  val adapter = WordListAdapter(this)
+      //  recyclerView.adapter = adapter
+      //  recyclerView.layoutManager = LinearLayoutManager(this)
+      //  wordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
+
+
+
+
+        if (favTextView.text == "Förrätt")
+        {
+            wordViewModel.getCategory(category = "Forrat").observe(this, Observer { words ->
+                // Update the cached copy of the words in the adapter.
+                words?.let { adapter.setWords(it) }
+
+            })
+
 
         }
-        favRec.adapter = adapter
-      //  food.add(Word("1","1","1", "1",0,"1",11))
 
 
-        wordViewModel.allWords.observe(this, Observer { words ->
-
-        //wordViewModel.getCategory("Vege").observe(this, Observer { words ->
-            // Update the cached copy of the words in the adapter.
-            words?.let { adapter.setWords(it) }
-
-        })
-
-        Log.i("Pia8", "${wordViewModel.getCategory("Vege")}")
 
     }
 
