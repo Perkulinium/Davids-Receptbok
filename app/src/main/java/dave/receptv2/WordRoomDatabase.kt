@@ -10,7 +10,7 @@ import kotlinx.coroutines.experimental.Dispatchers
 import kotlinx.coroutines.experimental.IO
 import kotlinx.coroutines.experimental.launch
 
-@Database(entities = [Word::class], version = 11)
+@Database(entities = [Word::class], version = 12)
 abstract class WordRoomDatabase : RoomDatabase() {
 
     abstract fun wordDao(): WordDao
@@ -53,10 +53,10 @@ abstract class WordRoomDatabase : RoomDatabase() {
                 super.onOpen(db)
                 // If you want to keep the data through app restarts,
                 // comment out the following line.
-                INSTANCE?.let { database ->
-                    scope.launch(Dispatchers.IO) {
-                        populateDatabase(database.wordDao())
-                    }
+              //  INSTANCE?.let { database ->
+                //      scope.launch(Dispatchers.IO) {
+                //      populateDatabase(database.wordDao())
+                  }
                 }
             }
         }
@@ -70,7 +70,7 @@ abstract class WordRoomDatabase : RoomDatabase() {
             // Not needed if you only populate on creation.
 
 
-            wordDao.deleteAll()
+            //wordDao.deleteAll()
 
            // wordDao.updateFavorite(favoriter = true)
 
@@ -83,7 +83,7 @@ abstract class WordRoomDatabase : RoomDatabase() {
                 R.drawable.bildett,
                 "30 minuter",
                 21,
-                true)
+                false)
             wordDao.insert(word)
 
             word = Word(
@@ -194,8 +194,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
         }
 
 
-    }
 
 
 
-}
+
+
