@@ -61,6 +61,11 @@ class WordRepository(private val wordDao: WordDao) {
         wordDao.insert(word)
 
     }
+    @WorkerThread
+    suspend fun update(word: Word) {
+        wordDao.updateWord(word)
+    }
+
 
 
 

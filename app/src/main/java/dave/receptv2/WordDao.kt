@@ -43,8 +43,8 @@ interface WordDao {
 
 
 
-        @Update
-        fun update(word : Word)
+    @Update
+    fun updateWord(word: Word)
 
 
 }

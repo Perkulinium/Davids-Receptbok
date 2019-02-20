@@ -210,7 +210,9 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
             val randomTest4 = repository.randomID5
             return randomTest4
         }
-
+    fun update(word: Word) = scope.launch(Dispatchers.IO) {
+        repository.update(word)
+    }
 
 
 }

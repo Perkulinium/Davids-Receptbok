@@ -86,8 +86,8 @@ var click = true
                         theWord.favoriter = true
 
                         //wordViewModel.up
-
-                        //  wordViewModel.update(true)
+                            var update = Word("","","","",0,"",iD,true)
+                          wordViewModel.update(theWord)
                        words.single().favoriter = true
                        Log.i("Pia8", "Favoriter: ${words.single().favoriter}")
                 })
