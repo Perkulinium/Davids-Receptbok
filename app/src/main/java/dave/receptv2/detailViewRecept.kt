@@ -81,6 +81,7 @@ var click = true
                     Log.i("Pia8", "ID: $iD")
 
                         val theWord = words.single()
+                    //NY TEST
                         theWord.favoriter = true
 
                         //wordViewModel.up
