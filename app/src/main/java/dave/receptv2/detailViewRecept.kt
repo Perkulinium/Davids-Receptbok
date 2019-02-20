@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail_view_recept.*
-import kotlinx.android.synthetic.main.fragment_home.*
 
 class detailViewRecept : AppCompatActivity() {
 
@@ -68,7 +67,7 @@ var click = true
 
 
 
-        Log.i("Pia8", "$intentID")
+      //  Log.i("Pia8", "$intentID")
       //  Log.i("Pia8", "${words?.single()?.ID}")
 
         var iD = intentID
@@ -76,34 +75,34 @@ var click = true
             if (click)
             {
 
-
-                Log.i("Pia8", "True")
-               // var iD2 = words.single().ID
-               // Log.i("Pia8", "${words.single().title}")
-
                 wordViewModel.getID(iD).observe(this, Observer { words ->
                     words?.let { adapter.setWords(it)}
                     this.words = words!!
+                    Log.i("Pia8", "ID: $iD")
 
-                    Log.i("Pia8", "titel: ${words.single().title} " )
+                        val theWord = words.single()
+                        theWord.favoriter = true
 
-                 //   words.single().favoriter = words.single().favoriter != true
+                        //wordViewModel.up
 
-                  
-
-
-                    Log.i("Pia8", "Favoriter: ${words.single().favoriter}")
-
+                        //  wordViewModel.update(true)
+                       words.single().favoriter = true
+                       Log.i("Pia8", "Favoriter: ${words.single().favoriter}")
                 })
+
+
 
 
                 click = false
 
 
             } else {
-            //    Log.i("Pia8", "False")
-         //       words.single().favoriter = false
-            //    Log.i("Pia8", "Favoriter: ${words.single().favoriter}")
+                Log.i("Pia8", "ID: $iD")
+
+                //  wordViewModel.update(false)
+                words.single().favoriter = false
+                Log.i("Pia8", "Favoriter: ${words.single().favoriter}")
+
                 click = true
             }
 
@@ -117,7 +116,6 @@ var click = true
 
     fun save()
     {
-
 
 
 

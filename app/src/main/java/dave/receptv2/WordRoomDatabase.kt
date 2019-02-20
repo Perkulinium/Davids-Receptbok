@@ -72,6 +72,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
 
             wordDao.deleteAll()
 
+           // wordDao.updateFavorite(favoriter = true)
+
 //Kött
             var word = Word(
                 "Test",
@@ -190,6 +192,10 @@ abstract class WordRoomDatabase : RoomDatabase() {
 
 
         }
+
+
     }
+
+
 
 }
