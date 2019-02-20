@@ -72,7 +72,6 @@ class FavoritFragment : Fragment() {
 
 
 
-
         if (favTextView.text == "Förrätt")
         {
             wordViewModel.getFavorit(true).observe(this, Observer { words ->
@@ -82,6 +81,7 @@ class FavoritFragment : Fragment() {
 
 
             })
+
 
 
         }

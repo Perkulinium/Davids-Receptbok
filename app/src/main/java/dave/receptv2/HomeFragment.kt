@@ -111,44 +111,34 @@ class HomeFragment : Fragment() {
             words?.let { adapter.setWords(it)}
             this.words1 = words!!
 
+            Picasso.get().load(words.single().picture).resize(300, 300).into(food1)
 
-              Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food1)
-            Log.i("Pia11", "$words")
 
         })
           wordViewModel.getRandom1().observe(this, Observer { words ->
             words?.let { adapter.setWords(it)}
             this.words2 = words!!
-
-               Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food2)
-              Log.i("Pia21", "$words")
+              Picasso.get().load(words.single().picture).resize(300, 300).into(food2)
         })
         wordViewModel.getRandom2().observe(this, Observer { words ->
             words?.let { adapter.setWords(it)}
             this.words3 = words!!
 
-              Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food3)
-            Log.i("Pia31", "$words")
-            //test
+            Picasso.get().load(words.single().picture).resize(300, 300).into(food3)
 
         })
           wordViewModel.getRandom3().observe(this, Observer { words ->
             words?.let { adapter.setWords(it)}
             this.words4 = words!!
 
-               Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food4)
-              Log.i("Pia41", "$words")
+              Picasso.get().load(words.single().picture).resize(300, 300).into(food4)
         })
          wordViewModel.getRandom4().observe(this, Observer { words ->
             words?.let { adapter.setWords(it)}
             this.words5 = words!!
-               Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food6)
-             Log.i("Pia51", "$words")
 
-
+             Picasso.get().load(words.single().picture).resize(300, 300).into(food6)
         })
-
-
         food1.setOnClickListener{
             val intent1 = Intent(context, detailViewRecept::class.java)
             intent1.putExtra("ID", words1?.single()?.ID)
@@ -156,10 +146,8 @@ class HomeFragment : Fragment() {
             intent1.putExtra("recept", words1?.single()?.recept)
             intent1.putExtra("info", words1?.single()?.info)
             intent1.putExtra("ingredienser", words1?.single()?.ingredienser)
-           // intent1.putExtra("picture", words1?.single()?.picture)
             intent1.putExtra("picture", words1.single()?.picture)
             startActivity(intent1)
-
         }
         food2.setOnClickListener{
             val intent1 = Intent(context, detailViewRecept::class.java)

@@ -53,13 +53,17 @@ abstract class WordRoomDatabase : RoomDatabase() {
                 super.onOpen(db)
                 // If you want to keep the data through app restarts,
                 // comment out the following line.
-              //  INSTANCE?.let { database ->
-                //      scope.launch(Dispatchers.IO) {
-                //      populateDatabase(database.wordDao())
-                  }
+                    INSTANCE?.let { database ->
+                    scope.launch(Dispatchers.IO) {
+                        populateDatabase(database.wordDao())
+                    }
                 }
             }
+
+
+
         }
+
 
         /**
          * Populate the database in a new coroutine.
@@ -70,128 +74,29 @@ abstract class WordRoomDatabase : RoomDatabase() {
             // Not needed if you only populate on creation.
 
 
-            //wordDao.deleteAll()
+            wordDao.deleteAll()
 
-           // wordDao.updateFavorite(favoriter = true)
+
+            // wordDao.updateFavorite(favoriter = true)
 
 //Kött
             var word = Word(
-                "Test",
+                "World!",
                 "Hej",
                 "Meat",
                 "Ingredienser",
                 R.drawable.bildett,
                 "30 minuter",
                 21,
-                false)
+                false
+            )
             wordDao.insert(word)
 
-            word = Word(
-                "World!",
-                "Hej",
-                "Meat",
-                "7",
-                R.drawable.bildtva,
-                "30 minuter",
-                22,
-                false)
-            wordDao.insert(word)
 
-            word = Word(
-                "1!",
-                "2",
-                "Meat",
-                "6",
-                R.drawable.bildtre,
-                "30 minuter",
-                23,
-                false)
-            wordDao.insert(word)
-
-       //Förrätt
-            word = Word(
-                "vege!",
-                "2",
-                "Forrat",
-                "Lök\nBacon\nSaft",
-                R.drawable.bildfyra,
-                "30 minuter",
-                11,
-                false)
-            wordDao.insert(word)
-
-            word = Word(
-                "FUCK FÖRRÄTT",
-                "FEMTIO",
-                "Forrat",
-                "5",
-                R.drawable.bildfem,
-                "30 minuter",
-                12,
-                false)
-            wordDao.insert(word)
-
-            //Fisk
-            word = Word(
-                "Fisk1",
-                "FISHBLA TEST",
-                "Fish",
-                "4",
-                R.drawable.bildett,
-                "30 minuter",
-                31,
-                false)
-            wordDao.insert(word)
-
-            word = Word(
-                "Fisk2",
-                "FEMTIO",
-                "Fish",
-                "3",
-                R.drawable.bildtva,
-                "30 minuter",
-                32,
-                false)
-            wordDao.insert(word)
-
-            //Vegetariskt
-            word = Word(
-                "Vegetariskt",
-                "test vege bla\nbla",
-                "Vegetariskt",
-                "Test",
-                R.drawable.bildtre,
-                "30 minuter",
-                41,
-                false)
-            wordDao.insert(word)
-
-            //Veganskt
-            word = Word(
-                "Veganskt",
-                "test vege bla\nbla",
-                "Veganskt",
-                "2",
-                R.drawable.bildfyra,
-                "30 minuter",
-                51,
-                false)
-            wordDao.insert(word)
-
-            //Dessert
-           word = Word(
-               "Dessert",
-               "test vege bla\nbla",
-               "Dessert",
-               "1",
-               R.drawable.bildfem,
-               "30 minuter",
-               61,
-               false)
-            wordDao.insert(word)
-//test
 
         }
+    }
+}
 
 
 
