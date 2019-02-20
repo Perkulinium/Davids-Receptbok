@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_favorit.*
 
 
 class FavoritFragment : Fragment() {
-
+    //test
     private lateinit var wordViewModel: WordViewModel
     lateinit var adapter1 : favoAdapter
 

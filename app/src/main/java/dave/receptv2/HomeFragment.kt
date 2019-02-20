@@ -129,6 +129,7 @@ class HomeFragment : Fragment() {
 
               Picasso.get().load(words?.single()?.picture).resize(350, 350).into(food3)
             Log.i("Pia31", "$words")
+            //test
 
         })
           wordViewModel.getRandom3().observe(this, Observer { words ->

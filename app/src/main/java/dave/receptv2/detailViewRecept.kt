@@ -82,6 +82,7 @@ var click = true
 
                         val theWord = words.single()
                     //NY TEST
+                    //test
                         theWord.favoriter = true
 
                         //wordViewModel.up

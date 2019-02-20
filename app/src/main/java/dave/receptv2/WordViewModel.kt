@@ -127,7 +127,7 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
         if (ID == 32)
         {
             val number32 = repository.numberCategory32
-            return number32
+            return number32 //test
         }
         if (ID == 41)
         {
