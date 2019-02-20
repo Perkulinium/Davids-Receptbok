@@ -6,10 +6,12 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.helper.ItemTouchHelper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_genre_recept_.*
 import kotlinx.android.synthetic.main.fragment_favorit.*
 
@@ -76,6 +78,8 @@ class FavoritFragment : Fragment() {
             wordViewModel.getFavorit(true).observe(this, Observer { words ->
                 // Update the cached copy of the words in the adapter.
                 words?.let { adapter.setWords(it) }
+
+
 
             })
 

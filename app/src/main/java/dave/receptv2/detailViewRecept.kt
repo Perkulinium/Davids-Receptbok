@@ -2,6 +2,7 @@ package dave.receptv2
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -10,16 +11,14 @@ import kotlinx.android.synthetic.main.activity_detail_view_recept.*
 
 class detailViewRecept : AppCompatActivity() {
 
-var click = true
-   // lateinit var words : List<Word>
+    var click = true
+    // lateinit var words : List<Word>
 
 
-   // lateinit var words : Word
+    // lateinit var words : Word
     lateinit var wordViewModel: WordViewModel
     var words = emptyList<Word>() // Cached copy of words
 //    val adapter = WordListAdapter(this)
-
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,15 +29,13 @@ var click = true
         wordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
 
 
-
-
 //       Log.i("Pia8", intentID)
 
         var intentDetail = intent.getStringExtra("titel")
         var receptDetail = intent.getStringExtra("recept")
         var ingredienserDetail = intent.getStringExtra("ingredienser")
         var infoDetail = intent.getStringExtra("info")
-       // var pictureDetail = intent.getStringExtra("picture")
+        // var pictureDetail = intent.getStringExtra("picture")
         var pictureDetail = intent.getIntExtra("picture", -1)
         var intentID = intent.getIntExtra("ID", -1)
 
@@ -47,81 +44,109 @@ var click = true
 
         var testPic = ""
 
-     //   val recept = intent.getStringArrayListExtra("Meat0")
+        //   val recept = intent.getStringArrayListExtra("Meat0")
 
         titleText.setText(intentDetail)
         receptText.setText(receptDetail)
         info.setText(infoDetail)
         ingrediText.setText(ingredienserDetail)
-       // imageView2.setImageBitmap(pictureDetail.to)
+        // imageView2.setImageBitmap(pictureDetail.to)
 
 
-
-
-
-            Picasso.get().load(pictureDetail).resize(350, 350).into(imageView2)
+        Picasso.get().load(pictureDetail).resize(350, 350).into(imageView2)
 
         val adapter = WordListAdapter(this)
 
         wordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
 
 
-
-      //  Log.i("Pia8", "$intentID")
-      //  Log.i("Pia8", "${words?.single()?.ID}")
+        //  Log.i("Pia8", "$intentID")
+        //  Log.i("Pia8", "${words?.single()?.ID}")
 
         var iD = intentID
-        favButton.setOnClickListener {
-            if (click)
+
+
+        wordViewModel.getID(iD).observe(this, Observer { words ->
+            words?.let { adapter.setWords(it) }
+            this.words = words!!
+            Log.i("Pia8", "ID: $iD")
+            if(words.single().favoriter == true)
             {
+                favButton.setBackgroundColor(Color.BLACK)
+            } else {
+                favButton.setBackgroundColor(Color.WHITE)
+            }
+
+            Log.i("Pia8", "Favoriter: ${words.single().favoriter}")
+
+        })
+
+        favButton.setOnClickListener {
+            if (click) {
+                favButton.setBackgroundColor(Color.BLACK)
 
                 wordViewModel.getID(iD).observe(this, Observer { words ->
-                    words?.let { adapter.setWords(it)}
+                    words?.let { adapter.setWords(it) }
                     this.words = words!!
                     Log.i("Pia8", "ID: $iD")
 
-                        val theWord = words.single()
+                    val theWord = words.single()
                     //NY TEST
                     //test
-                        theWord.favoriter = true
+                    theWord.favoriter = true
 
-                        //wordViewModel.up
-                            var update = Word("","","","",0,"",iD,true)
-                          wordViewModel.update(theWord)
-                       words.single().favoriter = true
-                       Log.i("Pia8", "Favoriter: ${words.single().favoriter}")
+                    //wordViewModel.up
+                    var update = Word("", "", "", "", 0, "", iD, true)
+                    wordViewModel.update(theWord)
+                    words.single().favoriter = true
+                    Log.i("Pia8", "Favoriter: ${words.single().favoriter}")
+
+                    click = false
                 })
 
 
-
-
-                click = false
-
-
             } else {
-                Log.i("Pia8", "ID: $iD")
+                Log.i("Pia8", "False")
 
-                //  wordViewModel.update(false)
-                words.single().favoriter = false
-                Log.i("Pia8", "Favoriter: ${words.single().favoriter}")
+                // words.single().favoriter = false
+                wordViewModel.getID(iD).observe(this, Observer { words ->
+                    words?.let { adapter.setWords(it) }
+                    this.words = words!!
+                    Log.i("Pia8", "ID: $iD")
 
-                click = true
+                    val theWord = words.single()
+                    //NY TEST
+                    //test
+                    theWord.favoriter = false
+
+                    //wordViewModel.up
+                    var update = Word("", "", "", "", 0, "", iD, false)
+                    wordViewModel.update(theWord)
+                    words.single().favoriter = false
+                    Log.i("Pia8", "Favoriter: ${words.single().favoriter}")
+
+
+                    click = true
+                })
+
+
             }
-
-
-        }
 
 //save()
 
 
+        }
+
+        fun save() {
+
+
+        }
+
+
+
     }
 
-    fun save()
-    {
-
-
-
-
-    }
 
 }
+
+
