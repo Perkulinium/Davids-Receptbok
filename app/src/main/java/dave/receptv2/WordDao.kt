@@ -32,8 +32,12 @@ interface WordDao {
     fun findByID(ID: Int) : LiveData<List<Word>>
 
 
-    @Query ("SELECT * FROM word_table ORDER BY RANDOM() LIMIT 1")
+    //@Query ("SELECT * FROM word_table ORDER BY RANDOM() LIMIT 1")
+   @Query ("SELECT * FROM word_table WHERE ID IN (SELECT ID FROM word_table ORDER BY RANDOM() LIMIT 1)")
+
+//    fun findbyRandom() : LiveData<List<Word>>
     fun findbyRandom() : LiveData<List<Word>>
+
 
     @Query ("SELECT * FROM WORD_TABLE where favoriter LIKE :favoriter")
     fun findByFavorit(favoriter: Boolean) : LiveData<List<Word>>

@@ -6,9 +6,6 @@ import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
 import kotlinx.coroutines.experimental.CoroutineScope
-import kotlinx.coroutines.experimental.Dispatchers
-import kotlinx.coroutines.experimental.IO
-import kotlinx.coroutines.experimental.launch
 
 @Database(entities = [Word::class], version = 12)
 abstract class WordRoomDatabase : RoomDatabase() {
@@ -53,10 +50,11 @@ abstract class WordRoomDatabase : RoomDatabase() {
                 super.onOpen(db)
                 // If you want to keep the data through app restarts,
                 // comment out the following line.
-                    INSTANCE?.let { database ->
-                    scope.launch(Dispatchers.IO) {
-                        populateDatabase(database.wordDao())
-                    }
+
+               //     INSTANCE?.let { database ->
+               //     scope.launch(Dispatchers.IO) {
+               //         populateDatabase(database.wordDao())
+               //     }
                 }
             }
 
@@ -74,7 +72,7 @@ abstract class WordRoomDatabase : RoomDatabase() {
             // Not needed if you only populate on creation.
 
 
-            wordDao.deleteAll()
+            //wordDao.deleteAll()
 
 
             // wordDao.updateFavorite(favoriter = true)
@@ -92,11 +90,22 @@ abstract class WordRoomDatabase : RoomDatabase() {
             )
             wordDao.insert(word)
 
+             word = Word(
+                "World2",
+                "Hej",
+                "Meat",
+                "Ingredienser",
+                R.drawable.bildtva,
+                "30 minuter",
+                22,
+                false
+            )
+            wordDao.insert(word)
 
 
         }
     }
-}
+
 
 
 

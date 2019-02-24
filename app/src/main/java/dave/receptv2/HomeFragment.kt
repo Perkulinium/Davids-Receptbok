@@ -51,10 +51,9 @@ class HomeFragment : Fragment() {
     lateinit var wordViewModel: WordViewModel
   //  lateinit var adapter : WordListAdapter
     var words1 = emptyList<Word>() // Cached copy of words
-    var words2 = emptyList<Word>() // Cached copy of words
-    var words3 = emptyList<Word>() // Cached copy of words
-    var words4 = emptyList<Word>() // Cached copy of words
-    var words5 = emptyList<Word>() // Cached copy of words
+
+    var words2 = String
+
 
 
 
@@ -73,13 +72,13 @@ class HomeFragment : Fragment() {
 
         }
 
+
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
 
         return inflater.inflate(R.layout.fragment_home, container, false)
 
@@ -107,38 +106,23 @@ class HomeFragment : Fragment() {
         wordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
 
 
+
         wordViewModel.getRandom().observe(this, Observer { words ->
-            words?.let { adapter.setWords(it)}
-            this.words1 = words!!
+            words?.let { adapter.setWords(it)
+                this.words1 = words
+                if (words.size >0)
+                {
+                    Log.i("Pia8", "ID: ${words.single().ID}")
+                    Picasso.get().load(words.single().picture).resize(300, 300).into(food1)
 
-            Picasso.get().load(words.single().picture).resize(300, 300).into(food1)
+                }
 
 
-        })
-          wordViewModel.getRandom1().observe(this, Observer { words ->
-            words?.let { adapter.setWords(it)}
-            this.words2 = words!!
-              Picasso.get().load(words.single().picture).resize(300, 300).into(food2)
-        })
-        wordViewModel.getRandom2().observe(this, Observer { words ->
-            words?.let { adapter.setWords(it)}
-            this.words3 = words!!
+            }
 
-            Picasso.get().load(words.single().picture).resize(300, 300).into(food3)
 
         })
-          wordViewModel.getRandom3().observe(this, Observer { words ->
-            words?.let { adapter.setWords(it)}
-            this.words4 = words!!
 
-              Picasso.get().load(words.single().picture).resize(300, 300).into(food4)
-        })
-         wordViewModel.getRandom4().observe(this, Observer { words ->
-            words?.let { adapter.setWords(it)}
-            this.words5 = words!!
-
-             Picasso.get().load(words.single().picture).resize(300, 300).into(food6)
-        })
         food1.setOnClickListener{
             val intent1 = Intent(context, detailViewRecept::class.java)
             intent1.putExtra("ID", words1?.single()?.ID)
@@ -149,47 +133,7 @@ class HomeFragment : Fragment() {
             intent1.putExtra("picture", words1.single()?.picture)
             startActivity(intent1)
         }
-        food2.setOnClickListener{
-            val intent1 = Intent(context, detailViewRecept::class.java)
 
-            intent1.putExtra("ID", words2?.single()?.ID)
-            intent1.putExtra("titel", words2.single().title)
-            intent1.putExtra("recept", words2.single().recept)
-            intent1.putExtra("info", words2.single().info)
-            intent1.putExtra("ingredienser", words2.single().ingredienser)
-            intent1.putExtra("picture", words2.single().picture)
-            startActivity(intent1)
-        }
-        food3.setOnClickListener {
-            val intent1 = Intent(context, detailViewRecept::class.java)
-            intent1.putExtra("ID", words3?.single()?.ID)
-            intent1.putExtra("titel", words3?.single()?.title)
-            intent1.putExtra("recept", words3?.single()?.recept)
-            intent1.putExtra("info", words3?.single()?.info)
-            intent1.putExtra("ingredienser", words3?.single()?.ingredienser)
-            intent1.putExtra("picture", words3?.single()?.picture)
-            startActivity(intent1)
-        }
-        food4.setOnClickListener {
-            val intent1 = Intent(context, detailViewRecept::class.java)
-            intent1.putExtra("ID", words4?.single()?.ID)
-            intent1.putExtra("titel", words4?.single()?.title)
-            intent1.putExtra("recept", words4?.single()?.recept)
-            intent1.putExtra("info", words4?.single()?.info)
-            intent1.putExtra("ingredienser", words4?.single()?.ingredienser)
-            intent1.putExtra("picture", words4?.single()?.picture)
-            startActivity(intent1)
-        }
-        food6.setOnClickListener {
-            val intent1 = Intent(context, detailViewRecept::class.java)
-            intent1.putExtra("ID", words5?.single()?.ID)
-            intent1.putExtra("titel", words5?.single()?.title)
-            intent1.putExtra("recept", words5?.single()?.recept)
-            intent1.putExtra("info", words5?.single()?.info)
-            intent1.putExtra("ingredienser", words5?.single()?.ingredienser)
-            intent1.putExtra("picture", words5?.single()?.picture)
-            startActivity(intent1)
-        }
 
         week()
 
@@ -273,6 +217,11 @@ fun week()
     {
         ourFood1.setOnClickListener {
             Log.i("Pia89", "Torsdag")
+
+                wordViewModel.getID(21).observe(this, Observer { words ->
+                    this.words1 = words!!
+                    Log.i("Pia8", "${words1.single().ID}")
+                })
         }    }
     if (day == 6)
     {

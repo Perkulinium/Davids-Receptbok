@@ -173,44 +173,7 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
 
 
     }
-    fun getRandom1() : LiveData<List<Word>>
-    {
 
-
-
-            val randomTest2 = repository.randomID2
-            return randomTest2
-
-
-
-    }
-    fun getRandom2() : LiveData<List<Word>>
-    {
-
-
-
-            val randomTest3 = repository.randomID3
-            return randomTest3
-
-
-
-    }
-    fun getRandom3() : LiveData<List<Word>>
-    {
-
-
-
-            val randomTest3 = repository.randomID4
-            return randomTest3
-        }
-
-    fun getRandom4() : LiveData<List<Word>>
-    {
-
-
-            val randomTest4 = repository.randomID5
-            return randomTest4
-        }
     fun update(word: Word) = scope.launch(Dispatchers.IO) {
         repository.update(word)
     }
