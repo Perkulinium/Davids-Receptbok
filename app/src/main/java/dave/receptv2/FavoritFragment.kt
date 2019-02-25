@@ -72,7 +72,7 @@ class FavoritFragment : Fragment() {
 
 
 
-        if (favTextView.text == "Förrätt")
+        if (favTextView.text == "Favoriter")
         {
             wordViewModel.getFavorit(true).observe(this, Observer { words ->
                 // Update the cached copy of the words in the adapter.

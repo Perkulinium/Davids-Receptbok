@@ -18,7 +18,7 @@
             tools:listitem="5" android:id="@+id/favRec" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/favTextView"/>
     <TextView
-            android:text="Förrätt"
+            android:text="Favoriter"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/favTextView" app:layout_constraintStart_toStartOf="parent"

@@ -22,36 +22,36 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                 <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
-                              android:orientation="horizontal">
+                              android:orientation="horizontal" android:layout_marginLeft="0dp">
                     <ImageButton
                             android:src="@color/colorAccent"
                             android:layout_width="150dp"
                             android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
-                            tools:layout_editor_absoluteX="133dp" android:id="@+id/food1"/>
+                            tools:layout_editor_absoluteX="133dp" android:id="@+id/food1" android:layout_margin="10dp"/>
                     <ImageButton
                             android:src="@color/colorAccent"
                             android:layout_width="150dp"
                             android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
                             tools:layout_editor_absoluteX="133dp" android:id="@+id/food2"
-                            android:layout_weight="1"/>
+                            android:layout_weight="1" android:layout_margin="10dp"/>
                     <ImageButton
                             android:src="@color/colorAccent"
                             android:layout_width="150dp"
                             android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
                             tools:layout_editor_absoluteX="133dp" android:id="@+id/food3"
-                            android:layout_weight="1"/>
+                            android:layout_weight="1" android:layout_margin="10dp"/>
                     <ImageButton
                             android:src="@color/colorAccent"
                             android:layout_width="150dp"
                             android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
                             tools:layout_editor_absoluteX="133dp" android:id="@+id/food4"
-                            android:layout_weight="1"/>
+                            android:layout_weight="1" android:layout_margin="10dp"/>
                     <ImageButton
                             android:src="@color/colorAccent"
                             android:layout_width="150dp"
                             android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
                             tools:layout_editor_absoluteX="133dp" android:id="@+id/food6"
-                            android:layout_weight="1"/>
+                            android:layout_weight="1" android:layout_margin="10dp"/>
                 </LinearLayout>
             </HorizontalScrollView>
             <TextView
@@ -68,31 +68,32 @@
                             android:src="@color/colorAccent"
                             android:layout_width="150dp"
                             android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
-                            tools:layout_editor_absoluteX="133dp" android:id="@+id/ourFood1"/>
+                            tools:layout_editor_absoluteX="133dp" android:id="@+id/ourFood1"
+                            android:layout_margin="10dp"/>
                     <ImageButton
                             android:src="@color/colorAccent"
                             android:layout_width="150dp"
                             android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
                             tools:layout_editor_absoluteX="133dp" android:id="@+id/ourFood2"
-                            android:layout_weight="1"/>
+                            android:layout_weight="1" android:layout_margin="10dp"/>
                     <ImageButton
                             android:src="@color/colorAccent"
                             android:layout_width="150dp"
                             android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
                             tools:layout_editor_absoluteX="133dp" android:id="@+id/ourFood3"
-                            android:layout_weight="1"/>
+                            android:layout_weight="1" android:layout_margin="10dp"/>
                     <ImageButton
                             android:src="@color/colorAccent"
                             android:layout_width="150dp"
                             android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
                             tools:layout_editor_absoluteX="133dp" android:id="@+id/ourFood4"
-                            android:layout_weight="1"/>
+                            android:layout_weight="1" android:layout_margin="10dp"/>
                     <ImageButton
                             android:src="@color/colorAccent"
                             android:layout_width="150dp"
                             android:layout_height="150dp" tools:layout_editor_absoluteY="319dp"
                             tools:layout_editor_absoluteX="133dp" android:id="@+id/ourFood5"
-                            android:layout_weight="1"/>
+                            android:layout_weight="1" android:layout_margin="10dp"/>
                 </LinearLayout>
             </HorizontalScrollView>
             <TextView
