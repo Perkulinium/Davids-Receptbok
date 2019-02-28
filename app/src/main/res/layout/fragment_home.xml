@@ -99,12 +99,14 @@
             <TextView
                     android:text="Dagens Recept"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/todayChoosen" android:textSize="24sp"/>
+                    android:layout_height="wrap_content" android:id="@+id/todayChoosen" android:textSize="24sp"
+                    android:textAlignment="center"/>
             <ImageButton
                     android:src="@color/colorAccent"
                     android:layout_width="match_parent"
                     android:layout_height="200dp" tools:layout_editor_absoluteY="663dp"
-                    tools:layout_editor_absoluteX="98dp" android:id="@+id/todaysRecept"/>
+                    tools:layout_editor_absoluteX="98dp" android:id="@+id/todaysRecept"
+                    android:background="@android:color/transparent"/>
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

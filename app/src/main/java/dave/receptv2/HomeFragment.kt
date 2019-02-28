@@ -2,15 +2,12 @@ package dave.receptv2
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.support.annotation.RequiresApi
 import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
-import android.support.v4.content.ContextCompat.startActivity
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -386,7 +383,7 @@ fun week()
                     if (words.size >0)
                     {
                         Log.i("Pia8", "ID: ${words.single().ID}")
-                        Picasso.get().load(words.single().picture).fit().into(todaysRecept)
+                        Picasso.get().load(words.single().picture).resize(400, 400).into(todaysRecept)
                     }
                 }
             })
@@ -413,7 +410,7 @@ fun week()
             if (words.size >0)
             {
                 Log.i("Pia8", "ID: ${words.single().ID}")
-                Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood1)
+                Picasso.get().load(words.single().picture).fit().into(ourFood1)
 
             }
         })
@@ -435,7 +432,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood2)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood2)
                 }
             }
         })
@@ -458,7 +455,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood3)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood3)
                 }
             }
         })
@@ -479,7 +476,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood4)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood4)
                 }
             }
         })
@@ -500,7 +497,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood5)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood5)
                 }
             }
         })
@@ -548,7 +545,7 @@ fun week()
             if (words.size >0)
             {
                 Log.i("Pia8", "ID: ${words.single().ID}")
-                Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood1)
+                Picasso.get().load(words.single().picture).fit().into(ourFood1)
 
             }
         })
@@ -570,7 +567,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood2)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood2)
                 }
             }
         })
@@ -591,7 +588,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood3)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood3)
                 }
             }
         })
@@ -612,7 +609,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood4)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood4)
                 }
             }
         })
@@ -633,7 +630,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood5)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood5)
                 }
             }
         })
@@ -654,7 +651,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(todaysRecept)
+                    Picasso.get().load(words.single().picture).resize(400, 400).into(todaysRecept)
                 }
             }
         })
@@ -680,7 +677,7 @@ fun week()
             if (words.size >0)
             {
                 Log.i("Pia8", "ID: ${words.single().ID}")
-                Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood1)
+                Picasso.get().load(words.single().picture).fit().into(ourFood1)
 
             }
         })
@@ -702,7 +699,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood2)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood2)
                 }
             }
         })
@@ -723,7 +720,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood3)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood3)
                 }
             }
         })
@@ -744,7 +741,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood4)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood4)
                 }
             }
         })
@@ -765,7 +762,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood5)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood5)
                 }
             }
         })
@@ -786,7 +783,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(todaysRecept)
+                    Picasso.get().load(words.single().picture).resize(400, 400).into(todaysRecept)
                 }
             }
         })
@@ -811,7 +808,7 @@ fun week()
         if (words.size >0)
         {
             Log.i("Pia8", "ID: ${words.single().ID}")
-            Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood1)
+            Picasso.get().load(words.single().picture).fit().into(ourFood1)
 
         }
     })
@@ -833,7 +830,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood2)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood2)
                 }
             }
         })
@@ -854,7 +851,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood3)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood3)
                 }
             }
         })
@@ -875,7 +872,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood4)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood4)
                 }
             }
         })
@@ -896,7 +893,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood5)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood5)
                 }
             }
         })
@@ -917,7 +914,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(todaysRecept)
+                    Picasso.get().load(words.single().picture).resize(400, 400).into(todaysRecept)
                 }
             }
         })
@@ -944,7 +941,7 @@ fun week()
             if (words.size >0)
             {
                 Log.i("Pia8", "ID: ${words.single().ID}")
-                Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood1)
+                Picasso.get().load(words.single().picture).fit().into(ourFood1)
 
             }
         })
@@ -966,7 +963,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood2)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood2)
                 }
             }
         })
@@ -987,7 +984,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood3)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood3)
                 }
             }
         })
@@ -1008,7 +1005,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood4)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood4)
                 }
             }
         })
@@ -1029,7 +1026,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood5)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood5)
                 }
             }
         })
@@ -1050,7 +1047,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(todaysRecept)
+                    Picasso.get().load(words.single().picture).resize(400, 400).into(todaysRecept)
                 }
             }
         })
@@ -1076,7 +1073,7 @@ fun week()
             if (words.size >0)
             {
                 Log.i("Pia8", "ID: ${words.single().ID}")
-                Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood1)
+                Picasso.get().load(words.single().picture).fit().into(ourFood1)
 
             }
         })
@@ -1098,7 +1095,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood2)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood2)
                 }
             }
         })
@@ -1119,7 +1116,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood3)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood3)
                 }
             }
         })
@@ -1140,7 +1137,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood4)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood4)
                 }
             }
         })
@@ -1161,7 +1158,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(ourFood5)
+                    Picasso.get().load(words.single().picture).fit().into(ourFood5)
                 }
             }
         })
@@ -1182,7 +1179,7 @@ fun week()
                 if (words.size >0)
                 {
                     Log.i("Pia8", "ID: ${words.single().ID}")
-                    Picasso.get().load(words.single().picture).resize(300, 300).into(todaysRecept)
+                    Picasso.get().load(words.single().picture).resize(400, 400).into(todaysRecept)
                 }
             }
         })

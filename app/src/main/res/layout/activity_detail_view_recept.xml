@@ -9,16 +9,13 @@
 
     <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp" android:layout_marginEnd="8dp">
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:orientation="vertical" android:gravity="top">
-            <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" app:srcCompat="@android:drawable/btn_star"
-                    android:id="@+id/favButton"/>
             <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="300dp" app:srcCompat="@color/colorAccent" android:id="@+id/imageView2"
+                    android:layout_height="369dp" app:srcCompat="@color/colorAccent" android:id="@+id/imageView2"
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             />
             <TextView
@@ -44,4 +41,12 @@
                     android:textSize="18sp"/>
         </LinearLayout>
     </ScrollView>
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@android:drawable/btn_star"
+            android:id="@+id/favButton"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.976"
+            android:background="@android:color/transparent"/>
 </android.support.constraint.ConstraintLayout>

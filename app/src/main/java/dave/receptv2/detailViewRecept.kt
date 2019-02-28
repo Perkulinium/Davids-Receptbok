@@ -2,7 +2,6 @@ package dave.receptv2
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
-import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -48,7 +47,7 @@ class detailViewRecept : AppCompatActivity() {
         // imageView2.setImageBitmap(pictureDetail.to)
 
 
-        Picasso.get().load(pictureDetail).resize(350, 350).into(imageView2)
+        Picasso.get().load(pictureDetail).fit().into(imageView2)
 
         val adapter = WordListAdapter(this)
 
@@ -65,12 +64,14 @@ class detailViewRecept : AppCompatActivity() {
 
             if(words.single().favoriter == true)
             {
-                favButton.setBackgroundColor(Color.BLACK)
+               // favButton.setBackgroundColor(Color.BLACK)
+                favButton.setImageResource(R.drawable.ic_favorite_black_46dp)
                 click = false
             }
             if(words.single().favoriter == false)
             {
-                favButton.setBackgroundColor(Color.WHITE)
+               // favButton.setBackgroundColor(Color.WHITE)
+                favButton.setImageResource(R.drawable.ic_favorite_border_black_46dp)
                 click = true
             }
 

@@ -8,61 +8,55 @@
     <ImageButton
             android:src="@color/colorAccent"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="200dp"
             android:id="@+id/fishKnapp"
             app:layout_constraintTop_toBottomOf="@+id/meatKnapp"
-            app:layout_constraintBottom_toTopOf="@+id/dessertKnapp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/vegetarisktKnapp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/vegetarisktKnapp"
+            app:layout_constraintBottom_toTopOf="@+id/dessertKnapp"/>
     <ImageButton
             android:src="@color/colorAccent"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="200dp"
             android:id="@+id/dessertKnapp"
             app:layout_constraintStart_toEndOf="@+id/vegetarisktKnapp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fishKnapp"/>
+            app:layout_constraintTop_toBottomOf="@+id/fishKnapp" app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="50dp"/>
     <ImageButton
             android:src="@color/colorAccent"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="200dp"
             android:id="@+id/veganKnapp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/vegetarisktKnapp"
-            app:layout_constraintVertical_bias="0.596" app:layout_constraintEnd_toStartOf="@+id/dessertKnapp"
+            app:layout_constraintEnd_toStartOf="@+id/dessertKnapp"
             app:layout_constraintStart_toStartOf="parent"
-    />
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="50dp"/>
     <ImageButton
             android:src="@color/colorAccent"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="200dp"
             android:id="@+id/meatKnapp"
-            app:layout_constraintTop_toBottomOf="@+id/veckansKnapp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@+id/forrattKnapp"
-            app:layout_constraintBottom_toTopOf="@+id/fishKnapp" android:contentDescription="TODO"/>
+            app:layout_constraintBottom_toTopOf="@+id/fishKnapp" android:contentDescription="TODO"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="50dp"/>
     <ImageButton
             android:src="@color/colorAccent"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="200dp"
             android:id="@+id/forrattKnapp" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/veckansKnapp"
             app:layout_constraintEnd_toStartOf="@+id/meatKnapp"
-            app:layout_constraintBottom_toTopOf="@+id/vegetarisktKnapp"/>
+            app:layout_constraintBottom_toTopOf="@+id/vegetarisktKnapp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="50dp"/>
     <ImageButton
             android:src="@color/colorAccent"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="200dp"
             android:id="@+id/vegetarisktKnapp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/fishKnapp"
             app:layout_constraintTop_toBottomOf="@+id/forrattKnapp"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintBottom_toTopOf="@+id/veganKnapp"/>
-    <ImageButton
-            android:src="@color/colorAccent"
-            android:layout_width="0dp"
-            android:layout_height="250dp"
-            android:id="@+id/veckansKnapp" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
 </android.support.constraint.ConstraintLayout>
