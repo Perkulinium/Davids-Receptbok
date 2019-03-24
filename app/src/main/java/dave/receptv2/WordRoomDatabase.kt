@@ -136,7 +136,7 @@ abstract class WordRoomDatabase : RoomDatabase() {
             wordDao.insert(word)
 
             word = Word(
-                "Vitlöksbröd med Mozzarella(eller valfri ost)",
+                "Vitlöksbröd",
                 "Tillagning\nSätt ugnen på 225 grader grill.\nSmält smöret i en kastrull, tillsätt pressad vitlök & hackad persilja. Fördela ut en klick på varje brödskiva. Stoppa in brödet i ugnen i ca 10 min.\nSkär mozzarellan i skivor och lägg ut på brödet.\nStoppa in brödet igen tills mozzarellan fått en gyllenbrun färg.\nStrö över flingsalt och sätt in i ugnen (8-9 min).",
                 "Forrat",
             "Ingredienser\n4 st Skivor valfritt brod\n75 g Smör\n3 st Vitlöksklyftor\nPersilja\n2 st Mozzarella\n Salt\n\n",
@@ -148,7 +148,7 @@ abstract class WordRoomDatabase : RoomDatabase() {
             wordDao.insert(word)
 
             word = Word(
-                "Pizza med spenat och svamp",
+                "Pizza med spenat",
                 "Tillagning\nSätt ugnen på 225 grader.\nStek spenaten i en msk av oljan i en stor kastrull cirka 1 minut. Låt kallna.\nSkiva svampen och fräs den i resten av oljan cirka 15 minuter. Rör om då och då.\nRulla ut degen tillsammans med pappret på en plåt. Strö över pizzaosten. Lägg på spenat och svamp.\nGrädda pizzan i mitten av ugnen i 13-14 minuter eller tills pizzan fått vacker färg.",
                 "Forrat",
             "Ingredienser\n100 g babyspenat\n3 msk olivolja\n4 medelstora karljohansvampar, frysta och tinade\nsalt och peppar\n6 dl riven pizzaost\n1 dl flagad parmesan\n Valfri topping",
@@ -285,7 +285,7 @@ abstract class WordRoomDatabase : RoomDatabase() {
 
             //FISH
             word = Word(
-                "Tonfiskröra och bakad potatis",
+                "Tonfiskröra med potatis",
                 "Tillagning\nRengör potatisarna, skär ett lätt snitt på toppen (inte för djupt för då faller de isär). Baka i mitten av ugn på ca 225 grader i ca 50 minuter.\nHacka gurka och rödlök i små bitar. Krama ur lite vatten ur gurkan.\nHäll av vattnet från tonfisken och blanda tonfisk, crème fraiche, rödlök och gurka. Salta och peppra efter smak.\nServera tonfiskröran till bakad potatis, toppad med persilja, picklad rödlök och granatäpplekärnor. Om önskas, skvätt över några droppar lime.",
                 "Fish",
             "Ingredienser\n0,5 gurka\n1 rödlök\n1 förp tonfisk i vatten\n2 dl crème fraiche\nsalt\n svartpeppar\n0,5 dl picklad rödlök\n4 bakpotatis\n\n ",
@@ -382,7 +382,7 @@ abstract class WordRoomDatabase : RoomDatabase() {
             wordDao.insert(word)
 
             word = Word(
-                "Amerikanska veganpannkakor",
+                "Veganska pannkakor",
                 "Tillagning\nRör ihop vetemjöl, bakpulver, strösocker och vaniljsocker i en bunke.\nVispa ner veganmjölk och vatten.\nNär du har en klumpfri smet så hettar du upp lite mjölkfritt smör i en stekpanna och klickar ut små pannkakor med hjälp av en sked.\nStek dina amerikanska pannkakor gyllenbruna på båda sidor och servera med färska bär och lönnsirap.",
                 "Veganskt",
             "Ingredienser\n5 dl vetemjöl\n1 msk bakpulver\n1 msk strösocker\n2 tsk vaniljsocker\n2,5 dl mjölk, t ex soja-, mandel- eller havremjölk\n1,5 dl vatten\nmjölkfritt smör att steka i\n \n ",
@@ -407,7 +407,7 @@ abstract class WordRoomDatabase : RoomDatabase() {
 
             //DESSERT
             word = Word(
-                "Fruktsallad med cottage cheese",
+                "Fruktsallad",
                 "Tillagning\nSkär nektariner, melon och bananer i bitar och lägg i en skål.\nBlanda cottage cheese med kanel. Servera fruktsalladen med cottage cheese.",
                 "Dessert",
             "Ingredienser\n2 nektariner\n1 melon\n2 bananer\n4 dl cottage cheese\n1 tsk kanel\n\n ",

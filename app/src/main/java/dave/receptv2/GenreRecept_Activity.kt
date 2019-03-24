@@ -18,12 +18,7 @@ class GenreRecept_Activity : AppCompatActivity() {
     private lateinit var wordViewModel: WordViewModel
     lateinit var adapter : WordListAdapter
 
-
     var recept: ArrayList<String> = ArrayList()
-  //  var receptFor: ArrayList<String> = ArrayList()
-
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,71 +33,46 @@ class GenreRecept_Activity : AppCompatActivity() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-
-
         wordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
-
-
-
 
 if (foodCategoryTextView.text == "Kött")
 {
     wordViewModel.getCategory(category = "Meat").observe(this, Observer { words ->
-        // Update the cached copy of the words in the adapter.
         words?.let { adapter.setWords(it) }
-
     })
-
-
 }
-
-
         if (foodCategoryTextView.text == "Förrätt")
         {
             wordViewModel.getCategory(category = "Forrat").observe(this, Observer { words ->
-                // Update the cached copy of the words in the adapter.
                 words?.let { adapter.setWords(it) }
             })
-
-
-
         }
 
         if (foodCategoryTextView.text == "Fisk") {
-
             wordViewModel.getCategory(category = "Fish").observe(this, Observer { words ->
-                // Update the cached copy of the words in the adapter.
                 words?.let { adapter.setWords(it) }
             })
         }
 
         if (foodCategoryTextView.text == "Vegetariskt") {
             wordViewModel.getCategory(category = "Vegetariskt").observe(this, Observer { words ->
-                // Update the cached copy of the words in the adapter.
                 words?.let { adapter.setWords(it) }
             })
         }
 
         if (foodCategoryTextView.text == "Veganskt") {
             wordViewModel.getCategory(category = "Veganskt").observe(this, Observer { words ->
-                // Update the cached copy of the words in the adapter.
                 words?.let { adapter.setWords(it) }
             })
         }
 
         if (foodCategoryTextView.text == "Dessert") {
             wordViewModel.getCategory(category = "Dessert").observe(this, Observer { words ->
-                // Update the cached copy of the words in the adapter.
                 words?.let { adapter.setWords(it) }
             })
         }
-
-
-        }
-
-
-
     }
+}
 
 
 

@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".detailViewRecept">
+        tools:context=".detailViewRecept" android:background="@drawable/arteagasoskarpa">
 
     <ScrollView
             android:layout_width="match_parent"
@@ -23,22 +23,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" tools:layout_editor_absoluteY="411dp"
                     tools:layout_editor_absoluteX="81dp" android:id="@+id/titleText" android:editable="false"
-                    android:textSize="24sp" android:textAlignment="center"/>
+                    android:textSize="24sp" android:textAlignment="center" android:textColor="@android:color/black"
+                    android:background="@color/colorPrimaryDark"/>
             <TextView
                     android:text="Info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/info" android:textAlignment="center"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" android:textColor="@android:color/black"
+                    android:background="@color/colorPrimaryDark"/>
             <TextView
                     android:text="Ingredienser"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/ingrediText" android:textSize="18sp"/>
+                    android:layout_height="wrap_content" android:id="@+id/ingrediText" android:textSize="18sp"
+                    android:textColor="@android:color/black" android:background="@color/colorPrimaryDark"/>
             <TextView
                     android:text="Recept"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" tools:layout_editor_absoluteY="411dp"
                     tools:layout_editor_absoluteX="81dp" android:id="@+id/receptText" android:editable="false"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" android:textColor="@android:color/black"
+                    android:background="@color/colorPrimaryDark"/>
         </LinearLayout>
     </ScrollView>
     <ImageButton

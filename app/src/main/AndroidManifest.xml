@@ -7,18 +7,21 @@
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
+            android:label="Davids receptbok"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".detailViewRecept">
+        <activity android:name=".detailViewRecept"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="package.detailViewRecept" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".GenreRecept_Activity">
+        <activity android:name=".GenreRecept_Activity"
+                  android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="package.GenreRecept_Activity" />
 
@@ -27,7 +30,8 @@
         </activity>
         <activity
                 android:name=".MainActivity"
-                android:label="@string/app_name">
+                android:label="Davids"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
