@@ -33,7 +33,6 @@ class detailViewRecept : AppCompatActivity() {
         ingrediText.setText(ingredienserDetail)
 
         Picasso.get().load(pictureDetail).fit().into(imageView2)
-
         val adapter = WordListAdapter(this)
 
         wordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)

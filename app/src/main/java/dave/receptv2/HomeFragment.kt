@@ -38,15 +38,11 @@ class HomeFragment : Fragment() {
     var randomWords4 = emptyList<Word>()
     var randomWords5 = emptyList<Word>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
@@ -54,7 +50,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         super.onViewCreated(view, savedInstanceState)
-
         val adapter = WordListAdapter(this.context!!)
 
         wordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
@@ -168,7 +163,6 @@ class HomeFragment : Fragment() {
 @RequiresApi(Build.VERSION_CODES.O)
 fun week()
 {
-    //val current = LocalDateTime.now()
     val adapter = WordListAdapter(this.context!!)
         val calender = Calendar.getInstance()
         val day =    calender.get(Calendar.DAY_OF_WEEK)
@@ -186,7 +180,6 @@ fun week()
             })
             ourFood1.setOnClickListener {
                 Log.i("Pia89", "Söndag")
-              //  if (words.size > 0)
                 val intent1 = Intent(context, detailViewRecept::class.java)
                 intent1.putExtra("ID", words1?.single()?.ID)
                 intent1.putExtra("titel", words1?.single()?.title)
@@ -445,7 +438,6 @@ fun week()
         })
         ourFood1.setOnClickListener {
             Log.i("Pia89", "Tisdag")
-            //  if (words.size > 0)
             val intent1 = Intent(context, detailViewRecept::class.java)
             intent1.putExtra("ID", words1?.single()?.ID)
             intent1.putExtra("titel", words1?.single()?.title)
@@ -573,8 +565,7 @@ fun week()
         })
         ourFood1.setOnClickListener {
             Log.i("Pia89", "Onsdag")
-            //  if (words.size > 0)
-            val intent1 = Intent(context, detailViewRecept::class.java)
+             val intent1 = Intent(context, detailViewRecept::class.java)
             intent1.putExtra("ID", words1?.single()?.ID)
             intent1.putExtra("titel", words1?.single()?.title)
             intent1.putExtra("recept", words1?.single()?.recept)

@@ -463,10 +463,6 @@ abstract class WordRoomDatabase : RoomDatabase() {
             false
             )
             wordDao.insert(word)
-
-
-
-
         }
     }
 }

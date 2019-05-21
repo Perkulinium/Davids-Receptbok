@@ -22,9 +22,6 @@ class WordRepository(private val wordDao: WordDao) {
     val numberCategory14: LiveData<List<Word>> = wordDao.findByID(14)
     val numberCategory15: LiveData<List<Word>> = wordDao.findByID(15)
 
-
-
-
     //Kött
     val numberCategory21: LiveData<List<Word>> = wordDao.findByID(21)
     val numberCategory22: LiveData<List<Word>> = wordDao.findByID(22)
@@ -38,7 +35,6 @@ class WordRepository(private val wordDao: WordDao) {
     val numberCategory33: LiveData<List<Word>> = wordDao.findByID(33)
     val numberCategory34: LiveData<List<Word>> = wordDao.findByID(34)
     val numberCategory35: LiveData<List<Word>> = wordDao.findByID(35)
-
 
     //Fisk
     val numberCategory41: LiveData<List<Word>> = wordDao.findByID(41)
@@ -54,19 +50,12 @@ class WordRepository(private val wordDao: WordDao) {
     val numberCategory54: LiveData<List<Word>> = wordDao.findByID(54)
     val numberCategory55: LiveData<List<Word>> = wordDao.findByID(55)
 
-
-
-
     //Dessert
     val numberCategory61: LiveData<List<Word>> = wordDao.findByID(61)
     val numberCategory62: LiveData<List<Word>> = wordDao.findByID(62)
     val numberCategory63: LiveData<List<Word>> = wordDao.findByID(63)
     val numberCategory64: LiveData<List<Word>> = wordDao.findByID(64)
     val numberCategory65: LiveData<List<Word>> = wordDao.findByID(65)
-
-
-
-
 
     //Random
     val randomID: LiveData<List<Word>> = wordDao.findbyRandom()
@@ -78,13 +67,6 @@ class WordRepository(private val wordDao: WordDao) {
     //Favoriter
     var favoriteID: LiveData<List<Word>> = wordDao.findByFavorit(true)
 
-
-
-
-    // You must call this on a non-UI thread or your app will crash. So we're making this a
-    // suspend function so the caller methods know this.
-    // Like this, Room ensures that you're not doing any long running operations on the main
-    // thread, blocking the UI.
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
     suspend fun insert(word: Word) {
@@ -95,10 +77,4 @@ class WordRepository(private val wordDao: WordDao) {
     suspend fun update(word: Word) {
         wordDao.updateWord(word)
     }
-
-
-
-
-
-
 }

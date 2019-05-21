@@ -19,31 +19,22 @@ class WordListAdapter internal constructor(context: Context) : RecyclerView.Adap
     inner class WordViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val wordItemView: TextView = itemView.findViewById(R.id.listItem)
 
-
-
 init {
     itemView.setOnClickListener{
         Log.i("Pia8", "Klick på rad ${adapterPosition}")
 
         var detailIntent = Intent(itemView.context, detailViewRecept::class.java)
         detailIntent.putExtra("titel", "${wordItemView.text}")
-        //detailIntent.putExtra("recept", adapter.words.get(adapterPosition).recept)
         detailIntent.putExtra("recept", words.get(adapterPosition).recept)
         detailIntent.putExtra("info", words.get(adapterPosition).info)
         detailIntent.putExtra("picture", words.get(adapterPosition).picture)
         detailIntent.putExtra("ingredienser", words.get(adapterPosition).ingredienser)
         detailIntent.putExtra("ID", words.get(adapterPosition).ID)
 
-
-
-
-
         itemView.context.startActivity(detailIntent)
-
+        }
     }
 }
-
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
         val itemView = inflater.inflate(R.layout.list_item, parent, false)
@@ -53,24 +44,12 @@ init {
     override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
         val current = words[position]
         holder.wordItemView.text = current.title
-
-
-
-
-
-
     }
 
     internal fun setWords(words: List<Word>) {
         this.words = words
         notifyDataSetChanged()
-
-
     }
-
-
-
-
 
     override fun getItemCount() = words.size
 }

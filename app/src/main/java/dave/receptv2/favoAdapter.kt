@@ -32,10 +32,8 @@ class favoAdapter internal constructor(context: Context) : RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: favoAdapter.WordViewHolder, rownumber: Int) {
-
         val current = words[rownumber]
         holder.wordItemView.text = current.title
-
     }
 
     class WordViewHolder (view: View) : RecyclerView.ViewHolder(view) {

@@ -7,8 +7,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-
-
     var homeFrag : HomeFragment? = null
     var receptFrag : ReceptFragment? = null
     var favoritFrag : FavoritFragment? = null
@@ -62,4 +60,4 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().replace(R.id.main_fragment_holder, homeFrag!!).commit()
 
           }
-}
+    }

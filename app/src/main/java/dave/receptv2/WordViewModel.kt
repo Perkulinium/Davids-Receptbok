@@ -10,33 +10,19 @@ import kotlin.coroutines.experimental.CoroutineContext
 class WordViewModel(application: Application) : AndroidViewModel(application) {
 
     private var parentJob = Job()
-    // By default all the coroutines launched in this scope should be using the Main dispatcher
     private val coroutineContext: CoroutineContext
         get() = parentJob + Dispatchers.Main
     private val scope = CoroutineScope(coroutineContext)
 
     private val repository: WordRepository
-    // Using LiveData and caching what getAlphabetizedWords returns has several benefits:
-    // - We can put an observer on the data (instead of polling for changes) and only update the
-    //   the UI when the data actually changes.
-    // - Repository is completely separated from the UI through the ViewModel.
+
     val allWords: LiveData<List<Word>>
-
-   // val meatList: LiveData<List<Word>>
-
-   // val forratList : LiveData<List<Word>>
-
 
     init {
 
         val wordsDao = WordRoomDatabase.getDatabase(application, scope).wordDao()
         repository = WordRepository(wordsDao)
         allWords = repository.allWords
-
-
-
-
-
     }
 
     /**
@@ -53,10 +39,8 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
 
     fun getCategory(category: String) : LiveData<List<Word>>
     {
-
         if (category == "Meat")
         {
-
             val meatList = repository.meatCategoryTest
             return meatList
         }
@@ -65,7 +49,6 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
         {
             val forratList = repository.forratCategoryTest
             return forratList
-
         }
         if (category == "Fish")
         {
@@ -87,7 +70,6 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
             val dessertList = repository.dessertCategoryTest
             return dessertList
         }
-
         return allWords
     }
 
@@ -99,7 +81,6 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
             val number11 = repository.numberCategory11
             return number11
         }
-
         if (ID == 12)
         {
             val number12 = repository.numberCategory12
@@ -293,6 +274,4 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
     fun update(word: Word) = scope.launch(Dispatchers.IO) {
         repository.update(word)
     }
-
-
 }
